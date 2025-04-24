@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accessible Popups Case Study</title>
+    <link rel="stylesheet" href="../styles/casestudy.css" />
+    <link rel="stylesheet" href="../styles/components.css" />
+    <link rel="stylesheet" href="../styles/index.css" />
+    <script src="../script.js" defer></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Create the modal overlay element once
+        const modalOverlay = document.createElement("div");
+        modalOverlay.className = "modal-overlay";
+        document.body.appendChild(modalOverlay);
+
+        const exampleCards = document.querySelectorAll(".example-card");
+
+        exampleCards.forEach((card) => {
+          card.setAttribute("tabindex", "0");
+
+          const openModal = function () {
+            const img = card.querySelector("img");
+
+            modalOverlay.innerHTML = `
+        <div class="modal-content">
+          <img src="${img.src}" alt="${img.alt}" class="modal-image">
+          <a href="#" class="modal-close" aria-label="Close">&times;</a>
+        </div>
+      `;
+
+            // Show the modal
+            modalOverlay.classList.add("active");
+
+            // Focus the close button for accessibility
+            setTimeout(() => {
+              modalOverlay.querySelector(".modal-close").focus();
+            }, 100);
+
+            // Prevent scrolling on the body
+            document.body.style.overflow = "hidden";
+
+            // Add event listener to close button
+            const closeButton = modalOverlay.querySelector(".modal-close");
+            closeButton.addEventListener("click", closeModal);
+
+            // Close on Escape key
+            document.addEventListener("keydown", handleKeyDown);
+
+            // Close when clicking outside the modal content
+            modalOverlay.addEventListener("click", function (e) {
+              if (e.target === modalOverlay) {
+                closeModal(e);
+              }
+            });
+          };
+
+          // Click and keyboard event handlers
+          card.addEventListener("click", openModal);
+          card.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              openModal();
+            }
+          });
+        });
+
+        // Function to close the modal
+        function closeModal(e) {
+          if (e) e.preventDefault();
+          modalOverlay.classList.remove("active");
+          document.body.style.overflow = "";
+          document.removeEventListener("keydown", handleKeyDown);
+
+          // Return focus to the card that was clicked
+          setTimeout(() => {
+            document.activeElement.blur();
+          }, 100);
+        }
+
+        // Function to handle keyboard events
+        function handleKeyDown(e) {
+          if (e.key === "Escape") {
+            closeModal();
+          }
+        }
+      });
+    </script>
+
+    <style>
+      /* Header Banner */
+      .case-study-banner {
+        width: 100%;
+        max-width: 3000px;
+        overflow: hidden;
+        border-radius: 8px;
+        border: 3px solid var(--med-text);
+        background-color: var(--accent-color2);
+        margin: 5rem auto;
+      }
+
+      .banner-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        background-color: var(--accent-color5);
+        border-bottom: 3px solid var(--med-text);
+      }
+
+      .banner-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--med-text);
+        margin: 0;
+      }
+
+      .banner-buttons {
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .dark-mode .banner-button {
+        filter: invert(1);
+      }
+
+      .banner-button {
+        width: 24px;
+        height: 24px;
+      }
+
+      .banner-content {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .banner-description {
+        text-align: center;
+        color: var(--med-text);
+        max-width: 1000px;
+        margin: 0;
+        font-size: 1.5rem;
+        line-height: 1.4;
+      }
+
+      .banner-meta {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        font-size: 1.5rem;
+        color: var(--med-text);
+      }
+
+      .banner-cta {
+        padding: 0.75rem 1.5rem;
+        border-radius: 9999px;
+        color: var(--med-text);
+        font-weight: 500;
+        border: 3px solid var(--med-text);
+        background-color: var(--accent-color5);
+        cursor: pointer;
+        font-size: 1.25rem;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+
+      .banner-cta:hover {
+        background-color: var(--accent-color55);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <nav>
+        <div class="header-container">
+          <a href="/" class="name-link">
+            <h1 class="name"><strong>Sana Saab</strong></h1>
+          </a>
+          <nav>
+            <ul>
+              <li><a href="/">Projects</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/docs/resume.pdf" target="_blank">Resume</a></li>
+
+              <li>
+                <a href="" aria-label="Sun" class="toggle-theme">
+                  <img
+                    src="../assets/small-sun.svg"
+                    alt="Sun"
+                    class="sun-icon"
+                  />
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </nav>
+
+      <div class="case-study">
+        <main>
+          <section
+            style="display: flex; justify-content: center; align-items: start"
+          >
+            <div class="case-study-banner">
+              <!-- Header with title and buttons -->
+              <div class="banner-header">
+                <h2 class="banner-title">Accessible Popups</h2>
+                <div class="banner-buttons">
+                  <img
+                    src="../assets/accessible-popups/minimize.svg"
+                    alt=""
+                    class="banner-button"
+                  />
+                  <img
+                    src="../assets/accessible-popups/expand.svg"
+                    alt=""
+                    class="banner-button"
+                  />
+                  <img
+                    src="../assets/accessible-popups/close.svg"
+                    alt=""
+                    class="banner-button"
+                  />
+                </div>
+              </div>
+
+              <!-- Content area -->
+              <div class="banner-content">
+                <p class="banner-description">
+                  Understanding the intersection of design, usability, and
+                  accessibility in modern web interfaces
+                </p>
+
+                <div class="banner-meta">
+                  <div><strong>Duration:</strong> February 2025</div>
+                  <div><strong>Role:</strong> UI/UX Designer</div>
+                  <div><strong>Skills:</strong> Figma, Analysis</div>
+                </div>
+
+                <a href="#introduction" class="banner-cta">
+                  <strong>Read Case Study</strong>
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <div class="case-study-content">
+            <div class="case-study-nav">
+              <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#examples">Examples</a></li>
+                <li><a href="#analysis">Analysis</a></li>
+                <li><a href="#state-models">State Models</a></li>
+                <li><a href="#hm-redesign">H&M Redesign</a></li>
+                <li><a href="#reflection">Reflection</a></li>
+              </ul>
+            </div>
+
+            <div class="main-content">
+              <section id="introduction" class="section">
+                <h2>Introduction</h2>
+                <p>
+                  Popup dialogs appear everywhere, whether to warn you about
+                  deleting a file, ask for your email, or offer a discount. But
+                  how do these popups incorporate accessibility for user
+                  interaction? How do they handle multiple forms of inputs, and
+                  what are their different states?
+                </p>
+                <p>
+                  This case study examines three different approaches to cookie
+                  consent popups and analyzes what they do well and poorly from
+                  the perspective of users using different input methods.
+                </p>
+                <div class="callout">
+                  <p>
+                    The Goal: to improve the accessibility and design of a popup
+                    component
+                  </p>
+                </div>
+              </section>
+
+              <section id="examples" class="section">
+                <h2>Examples</h2>
+                <p>
+                  Below are examples of cookie consent popup dialogs from three
+                  popular websites—Filmin (streaming service), FIFA (sports
+                  organization), and H&M (fashion retailer)—in different states.
+                  Click to expand!
+                </p>
+                <div class="examples-grid">
+                  <div class="example-card">
+                    <img
+                      src="../assets/accessible-popups/filmin-full.png"
+                      alt="Filmin cookie consent popup: full screen"
+                      class="example-image"
+                    />
+                    <p>Filmin Full Screen</p>
+                  </div>
+                  <div class="example-card">
+                    <img
+                      src="../assets/accessible-popups/filmin-focus.png"
+                      alt="Filmin cookie consent popup: focus state"
+                      class="example-image"
+                    />
+                    <p>Filmin Focus State</p>
+                  </div>
+                  <div class="example-card">
+                    <img
+                      src="../assets/accessible-popups/fifa-full.png"
+                      alt="FIFA cookie consent popup"
+                      class="example-image"
+                    />
+                    <p>FIFA Full Screen</p>
+                  </div>
+                  <div class="example-card">
+                    <img
+                      src="../assets/accessible-popups/fifa-focus.png"
+                      alt="FIFA cookie consent popup: focus state"
+                      class="example-image"
+                    />
+                    <p>FIFA Focus State</p>
+                  </div>
+                  <div class="example-card">
+                    <img
+                      src="../assets/accessible-popups/h&m-full.png"
+                      alt="H&M cookie consent popup"
+                      class="example-image"
+                    />
+                    <p>H&M Full Screen</p>
+                  </div>
+                  <div class="example-card">
+                    <img
+                      src="../assets/accessible-popups/h&m-hover.png"
+                      alt="H&M cookie consent popup: hover state"
+                      class="example-image"
+                    />
+                    <p>H&M Hover State</p>
+                  </div>
+                </div>
+              </section>
+
+              <section id="analysis" class="section">
+                <h2>Analysis</h2>
+                <p>
+                  To evaluate popup usability, I analyzed how users interact
+                  with them via different input methods and how effectively each
+                  popup communicates its purpose and state. I focused on aspects
+                  like focus control, learnability, and efficiency.
+                </p>
+
+                <h3>Input</h3>
+                <div class="table-container">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Input Method</th>
+                        <th>Filmin</th>
+                        <th>FIFA</th>
+                        <th>H&M</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Interacting Outside Popup</strong></td>
+                        <td>
+                          <ul class="bullet-list">
+                            <li>Centered dialog</li>
+                            <li>Page scrollable</li>
+                            <li>Clicking outside has no effect</li>
+                          </ul>
+                        </td>
+                        <td>
+                          <ul class="bullet-list">
+                            <li>Bottom-aligned dialog</li>
+                            <li>Page scrollable</li>
+                            <li>Clicking outside has no effect</li>
+                          </ul>
+                        </td>
+                        <td>
+                          <ul class="bullet-list">
+                            <li>Left-aligned dialog</li>
+                            <li>Page scrollable and interactive</li>
+                            <li>
+                              Clicking outside may open links, popup blocks view
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td><strong>Mouse</strong></td>
+                        <td>
+                          <ul class="bullet-list">
+                            <li>Hover effects</li>
+                            <li>Clear targets</li>
+                            <li>Any button dismisses</li>
+                          </ul>
+                        </td>
+                        <td>
+                          <ul class="bullet-list">
+                            <li>Hover effects</li>
+                            <li>Clear targets</li>
+                            <li>Any button dismisses</li>
+                          </ul>
+                        </td>
+                        <td>
+                          <ul class="bullet-list">
+                            <li>Hover changes vary</li>
+                            <li>
+                              Some buttons dismiss, others continue interaction
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td><strong>Keyboard</strong></td>
+                        <td>
+                          <ul class="bullet-list">
+                            <li>Focus trapped</li>
+                            <li>Focus indicators visible</li>
+                            <li>Ctrl+C doesn't copy text</li>
+                            <li>Esc/Enter return focus to popup</li>
+                            <li>Enter/Space activate buttons</li>
+                            <li>Tab cycles through buttons</li>
+                          </ul>
+                        </td>
+                        <td>
+                          <ul class="bullet-list">
+                            <li>Focus trapped</li>
+                            <li>Focus indicators visible</li>
+                            <li>Ctrl+C doesn't copy text</li>
+                            <li>Esc/Enter only work if button focused</li>
+                            <li>Enter/Space activate buttons</li>
+                            <li>Tab cycles through buttons</li>
+                          </ul>
+                        </td>
+                        <td>
+                          <ul class="bullet-list">
+                            <li>Focus not trapped</li>
+                            <li>No focus indicators</li>
+                            <li>Requires Shift+Tab to reach popup</li>
+                            <li>Ctrl+C doesn't copy text</li>
+                            <li>Esc/Enter only work if button focused</li>
+                            <li>Enter/Space activate buttons</li>
+                            <li>Tab cycles through buttons</li>
+                          </ul>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>
+                          <strong
+                            >Learnability, Memorability, Efficiency</strong
+                          >
+                        </td>
+                        <td>
+                          <ul class="bullet-list">
+                            <li>Efficient: brief explanation</li>
+                            <li>Learnable: clear labels</li>
+                            <li>Memorable: standard location</li>
+                          </ul>
+                        </td>
+                        <td>
+                          <ul class="bullet-list">
+                            <li>Efficient: brief explanation</li>
+                            <li>Learnable: clear labels</li>
+                            <li>Memorable: standard location</li>
+                          </ul>
+                        </td>
+                        <td>
+                          <ul class="bullet-list">
+                            <li>Inefficient: long text</li>
+                            <li>Not learnable: vague title</li>
+                            <li>Not memorable: unusual location</li>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <h3>Output</h3>
+                <div class="table-container">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Output Type</th>
+                        <th>Filmin</th>
+                        <th>FIFA</th>
+                        <th>H&M</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Default Appearance</strong></td>
+                        <td>
+                          <ul class="bullet-list">
+                            <li>Greyed background</li>
+                            <li>Centered, bright popup</li>
+                          </ul>
+                        </td>
+                        <td>
+                          <ul class="bullet-list">
+                            <li>Greyed background</li>
+                            <li>Bright, bottom-wide popup</li>
+                          </ul>
+                        </td>
+                        <td>
+                          <ul class="bullet-list">
+                            <li>Large white box on left</li>
+                            <li>No visual emphasis</li>
+                            <li>High internal contrast</li>
+                          </ul>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td><strong>Focus State and Order</strong></td>
+                        <td>
+                          <ul class="bullet-list">
+                            <li>Focus trapped</li>
+                            <li>Left-to-right button order</li>
+                          </ul>
+                        </td>
+                        <td>
+                          <ul class="bullet-list">
+                            <li>Focus trapped</li>
+                            <li>Starts at "Data Protection Portal"</li>
+                            <li>Left-to-right order</li>
+                          </ul>
+                        </td>
+                        <td>
+                          <ul class="bullet-list">
+                            <li>Focus not trapped</li>
+                            <li>No indicators for cookie buttons</li>
+                            <li>Tab navigates whole site</li>
+                            <li>Top-to-bottom order</li>
+                          </ul>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td><strong>Pressed/Clicked State</strong></td>
+                        <td>
+                          Button darkens briefly; popup closes, background
+                          brightens.
+                        </td>
+                        <td>Button darkens; chosen action proceeds.</td>
+                        <td>
+                          No visual feedback, but popup may close depending on
+                          selection.
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td><strong>Screen Reader Behavior</strong></td>
+                        <td>
+                          <ul class="bullet-list">
+                            <li>Reads cookie explanation</li>
+                            <li>Announces buttons</li>
+                          </ul>
+                        </td>
+                        <td>
+                          <ul class="bullet-list">
+                            <li>Labeled as "alert"</li>
+                            <li>Reads all content and buttons</li>
+                          </ul>
+                        </td>
+                        <td>
+                          <ul class="bullet-list">
+                            <li>Reads alert only when focused</li>
+                            <li>Reads content and buttons</li>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
+              <section id="state-models" class="section">
+                <h2>State Models & Component Redesign</h2>
+                <p>
+                  From my experience interacting with the popups, I've
+                  idetintified H&M's popup as one with the most interesting
+                  design and with many possible issues. Continuing my study, I
+                  created two state models which visualize how a user may
+                  interact with H&M's popup. One model focuses on mouse users,
+                  and the other keyboard users.
+                </p>
+                <p>
+                  I then revised and optimized those state models, making a
+                  trade off between mouse and keyboard users while doing so. The
+                  redesigned state models are below.
+                </p>
+                <div class="state-model-container">
+                  <div class="state-model">
+                    <div class="state-model-title">
+                      Current Mouse User State Model
+                    </div>
+                    <div class="state-model-diagram">
+                      <img
+                        src="../assets/accessible-popups/mouse-state-model.png"
+                        alt="State diagram showing mouse user flow through Filmin popup interface"
+                        class="diagram-image"
+                      />
+                    </div>
+                    <div class="state-model-description">
+                      <p>
+                        The mouse user state model is relatively complicated due
+                        to the absense of a focus lock. Users can focus the
+                        popup by clicking it, and hover buttons to activate
+                        hover effects. Then, clicking a button dismisses the
+                        popup.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="state-model">
+                    <div class="state-model-title">
+                      Current Keyboard User State Model
+                    </div>
+                    <div class="state-model-diagram">
+                      <img
+                        src="../assets/accessible-popups/keyboard-state-model.png"
+                        alt="State diagram showing keyboard user flow through Filmin popup interface"
+                        class="diagram-image"
+                      />
+                    </div>
+                    <div class="state-model-description">
+                      <p>
+                        The mouse user state model reveals a confusing
+                        interaction sequence due to the lack of focus indicators
+                        and a focus lock. Users can focus the popup by pressing
+                        Shift+Tab, then tab to select the button they'd like to
+                        focus. Pressing enter on the correct button will dismiss
+                        the popup.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="state-model">
+                    <div class="state-model-title">
+                      Redesigned Mouse User State Model
+                    </div>
+                    <div class="state-model-diagram">
+                      <img
+                        src="../assets/accessible-popups/revised-mouse-state-model.png"
+                        alt="Revised state diagram showing improved mouse user flow"
+                        class="diagram-image"
+                      />
+                    </div>
+                    <div class="state-model-description">
+                      <p>
+                        The revised mouse flow introduces more consistent
+                        interaction patterns. Now that the focus is locked,
+                        mouse users are unable to unfocus the popup and the
+                        interaction is simplified.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="state-model">
+                    <div class="state-model-title">
+                      Redesigned Keyboard User State Model
+                    </div>
+                    <div class="state-model-diagram">
+                      <img
+                        src="../assets/accessible-popups/revised-keyboard-state-model.png"
+                        alt="Revised state diagram showing improved keyboard user flow"
+                        class="diagram-image"
+                      />
+                    </div>
+                    <div class="state-model-description">
+                      <p>
+                        The revised keyboard flow addresses key accessibility
+                        concerns. Now, focus is locked and navigation is much
+                        easier for keyboard users, preventing them from getting
+                        lost within the page. There are also focus indicators to
+                        inform users of their location.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="callout">
+                  <p>
+                    <strong>Trade-off:</strong> Adding automatic focus and focus
+                    trapping improves accessibility but could be disorienting
+                    for users who expect to navigate the page first. Now,
+                    keyboard users can more easily navigate the component, but
+                    mouse users are unable to explore other links or ignore the
+                    prescence of the component. The component was made more
+                    accessibile and useable for keyboard users, but visiting the
+                    webpage is now less efficient for mouse users (as they must
+                    address the component).
+                  </p>
+                </div>
+              </section>
+
+              <section id="hm-redesign" class="hm-redesign-section">
+                <h2>H&M Component Redesign</h2>
+                <p>
+                  After analyzing the H&M's cookie consent popup and creating
+                  new state models, I redesigned it in an attempt to improve
+                  accessibility and usability.
+                </p>
+                <div class="hm-redesign-container">
+                  <div class="hm-original">
+                    <div class="hm-header">
+                      <h3>Original H&M Component</h3>
+                    </div>
+                    <div class="hm-content">
+                      <img
+                        src="../assets/accessible-popups/h&m-full.png"
+                        alt="Original H&M cookie consent popup"
+                        class="hm-mockup"
+                        style="max-width: 90%"
+                      />
+                      <div class="hm-features">
+                        <h4>Current Implementation</h4>
+                        <ul class="bullet-list">
+                          <li>Title unclear</li>
+                          <li>Paragraph long (inefficient)</li>
+                          <li>Poor focus indicators</li>
+                          <li>No focus lock</li>
+                          <li>No visual indicator of importance</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="hm-redesigned">
+                    <div class="hm-header">
+                      <h3>Redesigned H&M Component (Focus State)</h3>
+                    </div>
+                    <div class="hm-content">
+                      <img
+                        src="../assets/accessible-popups/redesign-focus.png"
+                        alt="Redesigned H&M cookie consent popup with improved accessibility"
+                        class="hm-mockup"
+                        style="max-width: 90%"
+                      />
+                      <div class="hm-features">
+                        <h4>Improvements</h4>
+                        <ul class="bullet-list">
+                          <li>Create a title clear to function</li>
+                          <li>Greyed out the background</li>
+                          <li>
+                            Implemented focus trap for keyboard navigation
+                          </li>
+                          <li>Added visible focus indicators</li>
+                          <li>
+                            Improved semantic structure with proper ARIA roles
+                          </li>
+                          <li>Simplified button options</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="callout">
+                  <p>
+                    The redesign maintains H&M's minimalist visual identity
+                    while significantly improving accessibility for all users.
+                    Now that the component is simpler in nature, it is more
+                    efficient (less text and buttons), memorable (center of
+                    screen), and learnable (clear titles and labels)
+                  </p>
+                </div>
+              </section>
+
+              <section id="reflection" class="reflection-section">
+                <h2>Reflection</h2>
+                <p>
+                  The components observed showed varying degrees of success in
+                  accessibility. Filmin and FIFA did well with proper focus
+                  management and clear visual indicators, which I incorporated
+                  into my redesign by implementing focus trapping and visible
+                  focus states. H&M's original design lacked these features,
+                  creating significant barriers for keyboard users.
+                </p>
+
+                <p>
+                  My redesign addresses several accessibility considerations
+                  that were overlooked in the original H&M implementation,
+                  particularly the lack of keyboard focus indicators and focus
+                  trapping. I also simplified the content to enhance efficiency
+                  and learnability.
+                </p>
+
+                <p>
+                  The redesign solves for a "mismatch" as defined by Kat Holmes
+                  by eliminating the interaction barrier between the user and
+                  the interface. When a popup lacks proper keyboard navigation,
+                  it creates an artificial barrier that excludes users who rely
+                  on keyboards for navigation, effectively designing for
+                  exclusion rather than inclusion.
+                </p>
+
+                <h3>Input and Output Impact on Accessibility</h3>
+                <ul class="bullet-list">
+                  <li>
+                    <strong>Positive impact:</strong> Filmin's focus trapping
+                    ensures keyboard users with motor impairments can navigate
+                    the popup without accidentally tabbing away, providing a
+                    controlled and predictable interaction pattern.
+                  </li>
+                  <li>
+                    <strong>Negative impact:</strong> H&M's lack of visible
+                    focus indicators creates a significant barrier for users
+                    with visual impairments who rely on keyboard navigation, as
+                    they have no visual cue about their current location within
+                    the interface.
+                  </li>
+                </ul>
+
+                <p>
+                  Among the different user types, mouse users are most commonly
+                  prioritized in component design, as evidenced by all three
+                  examples having clear hover states but inconsistent keyboard
+                  support. This prioritization creates an imbalanced user
+                  experience that disadvantages keyboard users, screen reader
+                  users, and those who rely on assistive technologies,
+                  effectively excluding a significant portion of potential users
+                  from easily interacting with these essential interface
+                  components.
+                </p>
+
+                <div class="callout">
+                  <p>
+                    <strong>Key Takeaway:</strong> Inclusive design isn't about
+                    creating specialized solutions for different user groups,
+                    but rather about designing interfaces that adapt to diverse
+                    human needs and abilities. The redesigned popup is more
+                    accessible not because it adds special features, but because
+                    it removes unnecessary barriers to interaction.
+                  </p>
+                </div>
+              </section>
+            </div>
+          </div>
+        </main>
+      </div>
+      <footer>
+        <div class="footer-container">
+          <p>Designed and coded in Spring 2025 by Sana Saab</p>
+          <div class="social-links">
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/sgsaab"
+                  aria-label="GitHub"
+                  target="_blank"
+                >
+                  <img src="../assets/github.svg" alt="GitHub"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="mailto:sana_saab@brown.edu"
+                  aria-label="Email"
+                  target="_blank"
+                >
+                  <img src="../assets/email.svg" alt="Email"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/sanagsaab"
+                  aria-label="LinkedIn"
+                  target="_blank"
+                >
+                  <img src="../assets/linkedin.svg" alt="LinkedIn" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

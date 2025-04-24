@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iterative Design: Partiful Itineraries</title>
+  <link rel="stylesheet" href="../styles/casestudy.css" />
+  <link rel="stylesheet" href="../styles/components.css" />
+  <link rel="stylesheet" href="../styles/index.css" />
+  <script src="../script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Iterative Design: Itineraries</h1>
+    <p>
+      Iterating from sketches to high-fidelity prototypes to solve a
+      real-world design challenge
+    </p>
+  </header>
+
+  <main>
+    <section id="introduction" class="section">
+      <h2>Introduction</h2>
+      <p class="section-description">
+        How can we create an interface on Partiful for users to host and
+        attend multi-part events?
+      </p>
+      <!-- <img src="assets/partiful-logo.png" alt="Partiful logo" /> -->
+      <p>
+        In this case study, we developed our design thinking capabilities and prototyping skills by iteratively creating
+        digital interfaces for a startup called Partiful, a party-hosting platform designed to make planning and RSVPing
+        to events feel intuitive, effortless, and fun. </p>
+      <p>
+        While Partiful shines in creating single-day events, there is
+        currently a gap when it comes to multipart events—experiences that
+        span multiple days or include sub-events. Think a pregame and then a
+        concert, or a birthday trip with a beach day, dinner, and a sleepover!
+      </p>
+      <div class="callout">
+        <div style="display: flex; align-items: center;">
+          <img src="assets/questionmark.png" alt="Question mark icon"
+            style="width: 40px; height: auto; margin-right: 10px;" />
+          <p style="margin: 0;">
+            <strong>Problem:</strong> Creating multi-part events on Partiful is confusing and inefficient.
+          </p>
+        </div>
+      </div>
+      <p>
+        Currently, hosts have to create multiple separate event pages, and guests often need to text hosts if they
+        can only attend certain parts of the event, forcing them off the
+        platform. These factors fragment the experience for both hosts and
+        guests. Hosts also wish for the ability to have a total headcount across multiple sub-events.
+      </p>
+      <p>
+        No competitor—Google Calendar, eVite, iMessage, etc.—has effectively
+        solved this problem, so we pulled from our personal experiences and
+        user stories as college students to inform our designs.
+      </p>
+      <div class="callout">
+        <div style="display: flex; align-items: center;">
+          <img src="assets/goal.png" alt="Arrow in bullseye representing goal icon"
+            style="width: 40px; height: auto; margin-right: 10px;" />
+          <p style="margin: 0;">
+            <strong>Goal:</strong> design an intuitive and smooth interface which supports multipart events for
+            both hosts and guests.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach" class="section">
+      <h2>Our Approach</h2>
+      <p>
+        Throughout this project, we worked closely with Ally Klionsky, a
+        designer at Partiful, to align our vision with the startup's goals.
+        Our iterative design process included four key phases:
+      </p>
+      <ol>
+        <li>
+          <strong>Sketch Phase:</strong> Ideating through a variety of solutions with
+          hand-drawn sketches
+        </li>
+        <li>
+          <strong>Lo-fi Wireframing:</strong> Creating a skeletal framework for our designs
+        </li>
+        <li>
+          <strong>Critique & Feedback:</strong> Getting feedback and recommendations from industry designers
+        </li>
+        <li>
+          <strong>Hi-fi Prototyping:</strong> Developing a polished,
+          interactive prototype in Figma
+        </li>
+      </ol>
+      <img src="assets/approach.png"
+        alt="Sketches, then a low fidelity wireframe, then a critique, then a high fidelity wireframe, then a last critique before the final product"
+        class="image" />
+    </section>
+
+    <section id="sketches" class="section">
+      <h2>Sketches</h2>
+      <p class="section-description">
+        Exploring different approaches to multipart event interfaces
+      </p>
+      <p>
+        To explore different directions, our team brainstormed and sketched various
+        design concepts. We focused on different ways to structure multiple
+        subevents, help users RSVP clearly, and maintain Partiful's simple UI. We've included a few of our favorites!
+      </p>
+      <h3>Design considerations</h3>
+      <ul>
+        <li>
+          <strong>Subevent display:</strong> Should subevents be organized
+          vertically or horizontally? Is there a hierarchy with one main
+          event?
+        </li>
+        <li>
+          <strong>Partial attendance:</strong> How do we account for users who
+          might not be invited to every subevent?
+        </li>
+        <li>
+          <strong>Creation flow:</strong> When would users decide to create a
+          multipart event versus a single event? How would we accommodate users who may change their minds through the
+          process?
+        </li>
+        <li>
+          <strong>RSVP Experience:</strong> How can users RSVP to multiple
+          events without being overwhelmed with information? How would events appear to guests not invited to every
+          subevent?
+        </li>
+      </ul>
+
+      <div class="sketch-galleries">
+        <div class="sketch-set">
+          <h3>Sketch Set #1: Initial brainstorm</h3>
+          <div class="sketch-image">
+            <div class="sketch-image-container" style="width: 90%; height: auto;">
+              <img src="assets/sketch-annotations-3.png" alt="Sketch of a vertical timeline for multipart events"
+                class="image" />
+            </div>
+          </div>
+        </div>
+        <div class="sketch-set">
+          <h3>Sketch Set #2: Potential entry points?</h3>
+          <div class="sketch-image">
+            <div class="sketch-image-container" style="width: 90%; height: auto;">
+              <img src="assets/sketch-annotations-1.png" alt="Sketch of a vertical timeline for multipart events"
+                class="image" />
+            </div>
+          </div>
+        </div>
+        <div class="sketch-set">
+          <h3>Sketch Set #3: Subevent display</h3>
+          <div class="sketch-image">
+            <div class="sketch-image-container" style="width: 90%; height: auto;">
+              <img src="assets/sketch-annotations-2.png" alt="Sketch of a vertical timeline for multipart events"
+                class="image" />
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section id="wireframes" class="section">
+      <h2>Lo-fi Wireframes</h2>
+      <p class="section-description">
+        Combining our ideas into a cohesive prototype
+      </p>
+      <p>
+        After evaluating our initial sketches, we created lo-fi wireframes
+        using Balsamiq, combining the strongest elements from each design
+        concept. These wireframes represent the skeletal framework of our
+        solution, focusing on structure and user flow rather than visual
+        design.
+      </p>
+
+      <div class="guest-flow">
+        <h3>Guest Experience</h3>
+        <div class="wireframe-images">
+          <img src="assets/balsamiq-invited.png" alt="Sketch of a vertical timeline for multipart events"
+          class="image" />
+        </div>
+        <ul>
+          <li>
+            <strong>Screen 1:</strong> This is where they would see the itinerary, a preview of all subevents. We chose
+            a vertical scroll layout for mobile readability with events displaying chronologically, which also pulls
+            from Sketch #X. This helps guests quickly grasp the scope of a multipart event, and the details displayed
+            help them efficiently understand the purpose of each subevent.
+          </li>
+          <li>
+            <strong>Screen 2:</strong> Screen 2: This page appears when a guest taps a subevent, including further
+            information, a full-size image, RSVP action buttons, etc. This design pulls from Sketch #X, and aims to let
+            users focus on one subevent at a time and learn more before deciding.
+
+          </li>
+          <li>
+            <strong>Screen 3:</strong> This screen consolidates RSVP actions across all subevents, with an “RSVP to all”
+            feature for efficiency. We wanted to reduce decision fatigue and anticipate edge cases like partial
+            attendance, and make RSVPing centralized to one page.
+          </li>
+        </ul>
+      </div>
+
+      <div class="host-flow">
+        <h3>Host Experience</h3>
+        <div class="wireframe-images">
+          <img src="assets/balsamiq-invited.png" alt="Sketch of a vertical timeline for multipart events"
+          class="image" />
+        </div>
+        <ul>
+          <li><strong>Screen 1:</strong> Host dashboard entry point.</li>
+          <li>
+            <strong>Screen 2:</strong> On this page, hosts add the overall event title, image, and event information.
+            From here, they can either save the event (i.e. there are no subevents) which takes them to a completed
+            event page (Screen 3), or they can click “+ New Subevent”. 
+
+          </li>
+          <li>
+            <strong>Screen 4:</strong> Each subevent has its own title, time/date, image, location, and settings. We
+            wanted the interface to be familiar and consistent, so it uses the single event creation UI.
+          </li>
+          <li>
+            <strong>Screen 5:</strong> Once a subevent is saved, the host will see an itinerary-style page, similar to
+            the guest POV.
+          </li>
+          <li>
+            <strong>Screen 6:</strong> The host can invite a specific person or create a specific link that provides
+            access to particular events (i.e. not everyone is invited to every subevent).
+          </li>
+          <li>
+            <strong>Screen 7: </strong> Once they finish editing their event, the host can see the whole thing along with their command panel at the bottom.
+          </li>
+          <li>
+            <strong>Screen 8:</strong> Scrolling down reveals the activity and photo album areas, which are below each event.
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <section id="feedback" class="section">
+      <h2>Wireframe Critique</h2>
+      <p class="section-description">
+        Industry feedback that shaped our final design
+      </p>
+
+      <div class="loom-walkthrough">
+        <p> After finishing the wireframes, we presented the following loom to our critics to get their feedback:</p>
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <div style="position: relative; padding-bottom: 64.74820143884892%; height: auto; width: 70%;">
+          <iframe
+            src="https://www.loom.com/embed/ba9698a60b904b679f57103cd871399c?sid=da70bb9c-5954-4575-9b9f-1786a054e8a1"
+            frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="feedback-columns">
+        <div class="feedback-column">
+          <h3>Google Ventures Feedback</h3>
+          <p>
+            We met with Caroline Walters, a program manager from Google
+            Ventures, who provided the following valuable perspectives:
+          </p>
+          <ul>
+            <li>
+              Draw inspiration from widely-used platforms like Google
+              Calendar—what makes them intuitive?
+            </li>
+            <li>
+              Consider how to attract users who don't currently use Partiful
+            </li>
+            <li>
+              Focus on enhancing core functionality rather than adding complex
+              features
+            </li>
+          </ul>
+        </div>
+
+        <div class="feedback-column">
+          <h3>Partiful Feedback</h3>
+          <p>
+            Ally from Partiful provided critical insights that guided our
+            hi-fi designs:
+          </p>
+          <ul>
+            <li>
+              Simplify the user experience—subevents should not feel like
+              standalone events
+            </li>
+            <li>
+              Treat the main event as a central anchor with subevents as
+              lightweight extensions
+            </li>
+            <li>
+              Include only essential info for subevents: title, time, emoji
+              indicator, and optional location
+            </li>
+            <li>
+              Consider how to handle photos and comments to prevent guests
+              from feeling excluded
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="hifi" class="section">
+      <h2>Hi-Fi Prototype</h2>
+      <p class="section-description">
+        Bringing our solution to life with an interactive prototype!
+      </p>
+      <!-- Figma embed would go here -->
+      <div class="figma-embed">
+        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1); width: 100%; height: 100%; display: block;"
+          src="https://embed.figma.com/design/FZJtMhJRIx3JmZXs4RNtis/Partiful-Itineraries?node-id=0-1&embed-host=share"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <p>
+        Based on the feedback received, we created a more realistic and
+        interactive prototype in Figma that simulates the actual user
+        experience. Our hi-fi prototype incorporates the following key improvements:
+      </p>
+
+      <ul>
+        <li>
+          Consolidated event information to reduce navigation complexity
+        </li>
+        <li>
+          Created a tagging system for photos and comments to associate them
+          with specific subevents
+        </li>
+        <li>Simplified interfaces to maintain Partiful's clean aesthetic</li>
+        <li>
+          Redesigned RSVP flow to provide necessary context for
+          decision-making
+        </li>
+      </ul>
+
+      <div class="loom-walkthrough">
+        <p> Here is a walkthrough of this prototype on Loom:</p>
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <div style="position: relative; padding-bottom: 64.74820143884892%; height: auto; width: 70%;">
+          <iframe
+            src="https://www.loom.com/embed/883e601814b941a28dcdc26dbae5a418?sid=0a2bbc55-af75-4e4c-9c9c-0b066c8d821a"
+            frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+          </iframe>
+        </div>
+      </div>
+      <h3>Final Refinements</h3>
+      <p>
+        After reviewing our hi-fi prototype with Ally, we made these final
+        adjustments:
+      </p>
+      <div class="figma-embed" style="margin-bottom: 10px;">
+        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1); width: 100%; height: 100%; display: block;"
+          src="https://embed.figma.com/design/FZJtMhJRIx3JmZXs4RNtis/Partiful-Itineraries?node-id=4252-12427&embed-host=share"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="before-after-header" style="display: flex; font-weight: bold; margin-bottom: 10px;">
+        <div style="flex: 1; text-align: center;">Before</div>
+        <div style="flex: 1; text-align: center;">After</div>
+      </div>
+      <div class="before-after">
+        <div class="before">
+          <p>
+            RSVP interface was overwhelming with too many buttons and
+            options
+          </p>
+        </div>
+        <div class="after">
+          <p>
+            Split functionality across two screens with clearer purpose and
+            improved information hierarchy
+          </p>
+        </div>
+      </div>
+      <div class="before-after">
+        <div class="before">
+          <p>Itinerary section placed too low on event screen</p>
+        </div>
+        <div class="after">
+          <p>
+            Moved itinerary up as primary content, making multipart
+            capabilities immediately visible
+          </p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section id="reflection" class="section">
+      <h2>Conclusion and Further Steps</h2>
+      <p class="section-description">
+        Key takeaways and opportunities for future development
+      </p>
+
+      <p>
+        All in all, this project challenged us to balance simplicity with user needs,
+        extending Partiful's capabilities while staying true to their
+        straightforward, unique designs. Through several rounds of iteration
+        and feedback, we created a comprehensive solution for multipart
+        events.
+      </p>
+
+      <h3>Key Takeaways</h3>
+      <ul>
+        <li>
+          <strong>User-centered design:</strong> Remember that you are a user
+          too—your experiences can inform design decisions when combined with
+          diverse user feedback!
+        </li>
+        <li>
+          <strong>Design for edge cases:</strong> Thoughtful design accounts
+          for unexpected use patterns—what happens if a user creates 10
+          subevents instead of three? What if event names are unusually long?
+        </li>
+        <li>
+          <strong>Iterative process:</strong> Each round of feedback revealed
+          blind spots and improved our solution in ways we couldn't have
+          anticipated initially.
+        </li>
+      </ul>
+
+      <h3>Future Directions</h3>
+      <ul>
+        <li>
+          <strong>Broader user research:</strong> We would benefit from
+          formally polling users from diverse backgrounds beyond our own
+          experiences. It might be useful to consider demographics like a party school versus a more
+          academically-focused school, co-ed vs single gender, etc.
+
+        </li>
+        <li>
+          <strong>Accessibility review:</strong> A more in-depth review would
+          ensure the experience works well for users with different abilities, including across screen readers and joint
+          mobilities.
+        </li>
+        <li>
+          <strong>Integration testing:</strong> We would want to see how the multipart
+          event feature integrates with existing Partiful features like photo
+          sharing and chat.
+        </li>
+      </ul>
+
+      <!-- <div class="callout">
+        <p>
+          <strong>Final thought:</strong> Our solution successfully bridges
+          the gap in Partiful's features, allowing users to create cohesive
+          multipart events while maintaining the platform's signature
+          simplicity and delight.
+        </p>
+      </div> -->
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Partiful Itineraries Design Project | Athena Deng, Kathy Li, Sana Saab, Xavier Dargan</p>
+  </footer>
+  <script src="scripts/lightbox.js"></script>
+</body>
+
+</html>

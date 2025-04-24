@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Redesign of OLY Webpage</title>
+    <link rel="stylesheet" href="../styles/casestudy.css" />
+    <link rel="stylesheet" href="../styles/components.css" />
+    <link rel="stylesheet" href="../styles/index.css" />
+    <script src="../script.js" defer></script>
+
+    <style>
+      .image-container {
+        margin: 2rem 0;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+      }
+
+      .image-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .image-caption {
+        background-color: var(--secondary-color);
+        padding: 1rem;
+        font-size: 1.1rem;
+        text-align: center;
+      }
+
+      .view-button {
+        display: inline-block;
+        margin: 1rem 1rem 1rem 0;
+        padding: 0.75rem 1.5rem;
+        background-color: var(--accent-color);
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
+      }
+
+      .view-button:hover {
+        background-color: #7a5d9b;
+      }
+
+      .case-study-banner {
+        background-color: var(--primary-color);
+        padding: 3rem;
+        border-radius: var(--border-radius);
+        margin-bottom: 2rem;
+        text-align: center;
+        max-width: 1200px;
+      }
+
+      .case-study-banner h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .case-study-banner p {
+        font-size: 1.5rem;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <nav>
+        <div class="header-container">
+          <a href="/" class="name-link">
+            <h1 class="name"><strong>Sana Saab</strong></h1>
+          </a>
+          <nav>
+            <ul>
+              <li><a href="/">Projects</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/docs/resume.pdf" target="_blank">Resume</a></li>
+
+              <li>
+                <a href="" aria-label="Sun" class="toggle-theme">
+                  <img
+                    src="../assets/small-sun.svg"
+                    alt="Sun"
+                    class="sun-icon"
+                  />
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </nav>
+
+      <div class="case-study">
+        <main>
+          <section
+            style="display: flex; justify-content: center; align-items: start"
+          >
+            <div class="case-study-banner">
+              <h1>Responsive Redesign</h1>
+              <p>
+                An analysis and redesign of OLY Swim Team's website, focusing on
+                usability, accessibility, and responsive design.
+              </p>
+            </div>
+          </section>
+
+          <div class="case-study-content">
+            <div class="case-study-nav">
+              <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#original-website">Original Website</a></li>
+                <li><a href="#usability-problems">Usability Problems</a></li>
+                <li><a href="#visual-redesign">Visual Redesign</a></li>
+                <li><a href="#implementation">Implementation</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+              </ul>
+            </div>
+
+            <div class="main-content">
+              <section id="overview" class="section">
+                <h2>Overview</h2>
+                <p>
+                  For this project, I selected a public website and analyzed,
+                  redesigned, and implemented a responsive version of it. The
+                  goal was to address previously identified useability problems
+                  and then correct them with a more user-friendly, accessible,
+                  and responsive new website.
+                </p>
+                <a
+                  href="https://www.gomotionapp.com/team/mioly/page/home"
+                  class="view-button"
+                  target="_blank"
+                  >View Original Website</a
+                >
+                <a
+                  href="https://sgsaab.github.io/redesigned-oly-website/"
+                  class="view-button"
+                  target="_blank"
+                  >View Redesigned Website</a
+                >
+                <h3>Project Links</h3>
+                <p>
+                  <strong>Original Website:</strong>
+                  <a
+                    href="https://www.gomotionapp.com/team/mioly/page/home"
+                    target="_blank"
+                    >OLY Swimming Home</a
+                  >
+                </p>
+                <p>
+                  <strong>Redesigned Website:</strong>
+                  <a
+                    href="https://sgsaab.github.io/redesigned-oly-website/"
+                    target="_blank"
+                    >Redesigned OLY Website</a
+                  >
+                </p>
+              </section>
+
+              <section id="original-website" class="section">
+                <h2>Original Website</h2>
+                <p>
+                  I chose to redesign the OLY Swim Team website because it's
+                  publicly accessible, not particularly popular, and has a
+                  confusing and overwhelming layout.
+                </p>
+
+                <div class="image-container">
+                  <img
+                    src="../assets/responsive-redesign/original-website.png"
+                    alt="Screenshot of the original OLY Swimming website"
+                  />
+                  <div class="image-caption">
+                    The original website showing visual clutter and usability
+                    issues
+                  </div>
+                </div>
+              </section>
+
+              <section class="section" id="usability-problems">
+                <h2>Identifying Usability Problems</h2>
+                <p>
+                  I analyzed the website based on three key usability criteria:
+                  efficiency, learnability, and memorability. I also assessed
+                  the site's conceptual model and accessibility.
+                </p>
+
+                <h3>Efficiency Issues</h3>
+                <ul class="problems-list">
+                  <li>
+                    The arrows to navigate between images only appear on hover
+                    and often don't work, requiring multiple clicks
+                  </li>
+                  <li>
+                    Dropdown menus in the navigation bar extend below the
+                    viewport, requiring users to scroll down
+                  </li>
+                  <li>
+                    Photo transitions are unnecessarily slow, even for
+                    previously loaded images (try clicking 3+ photos under the
+                    facebook post)
+                  </li>
+                  <li>
+                    Most sections under "Upcoming Events" don't display anything
+                    except for "Team Events", and are redundant or useless
+                  </li>
+                </ul>
+
+                <h3>Learnability Issues</h3>
+                <ul class="problems-list">
+                  <li>
+                    Inconsistency in header logos: all are clickable except the
+                    Speedo logo, which causes a misleading conceptual model
+                  </li>
+                  <li>
+                    Important buttons like "Register Here" and "Spirit Wear
+                    Store" are tucked away
+                  </li>
+                  <li>
+                    The login button is hidden at the top of the screen with no
+                    descriptive text
+                  </li>
+                  <li>
+                    The "Pool" text changes the cursor to indicate it's
+                    clickable, but nothing happens when clicked, conflicting
+                    with a conceptual model
+                  </li>
+                </ul>
+
+                <h3>Memorability Issues</h3>
+                <ul class="problems-list">
+                  <li>
+                    Visual clutter and oversized header make the site layout
+                    difficult to remember
+                  </li>
+                  <li>
+                    The "more events" button at the bottom of the events list
+                    redirects the user instead of expanding the list, which is a
+                    misleading conceptual model. A "see more" type button
+                    normally loads more content instead of redirecting.
+                  </li>
+                </ul>
+
+                <h3>Accessibility Analysis</h3>
+                <p>
+                  There are many accessibility issues caught by WebAIM WAVE as
+                  well. There's little contrast between lots of the text on the
+                  screen, particularly when buttons are hovered, causing an
+                  accessibility issue and strain on the eyes. Also, no photos or
+                  links have alt text provided. Furthermore, many items are in
+                  black boxes against a black background, making it difficult to
+                  see them.
+                </p>
+              </section>
+
+              <section class="section" id="visual-redesign">
+                <h2>Visual Redesign</h2>
+
+                <h3>Style Guide</h3>
+                <p>
+                  To begin redesigning the webiste, I created a comprehensive
+                  style guide to reference:
+                </p>
+
+                <div class="image-container">
+                  <img
+                    src="../assets/responsive-redesign/style-guide.png"
+                    alt="Style guide for the redesigned website"
+                  />
+                  <div class="image-caption">
+                    Style guide with typography, colors, and components
+                  </div>
+                </div>
+
+                <h3>Mockups</h3>
+                <p>
+                  I also developed annotated mockups for three different screen
+                  sizes to ensure a responsive design:
+                </p>
+                <div class="image-container">
+                  <img
+                    src="../assets/responsive-redesign/annotated-mockups.png"
+                    alt="Figma mockups for the redesigned website"
+                  />
+                  <div class="image-caption">
+                    Responsive mockups for desktop, tablet, and mobile views
+                  </div>
+                </div>
+
+                <p>
+                  Each mockup is annotated with layout decisions, responsive
+                  elements, and interaction states to guide the implementation
+                  process. Key responsive design decisions include:
+                </p>
+                <ul class="problems-list">
+                  <li>
+                    Collapsing the navigation menu into a hamburger menu on
+                    mobile
+                  </li>
+                  <li>
+                    Adjusting grid layouts to stack vertically on smaller
+                    screens
+                  </li>
+                  <li>
+                    Increasing button and touch target sizes on mobile devices
+                  </li>
+                  <li>
+                    Using relative font sizes to ensure readability across
+                    devices
+                  </li>
+                </ul>
+              </section>
+
+              <section class="section" id="implementation">
+                <h2>Implementation</h2>
+                <p>
+                  The redesigned website was built using HTML and CSS with a
+                  focus on responsiveness and accessibility. I used flexbox and
+                  CSS Grid for layout management.
+                </p>
+
+                <h3>Key Implementation Decisions</h3>
+                <div class="table-container">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Category</th>
+                        <th>Original Issue</th>
+                        <th>Solution</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Navigation</td>
+                        <td>
+                          Complex navigation with dropdown menus that extend
+                          below viewport, links that lead to nothing, and
+                          multiple links that lead to the same page.
+                        </td>
+                        <td>
+                          Simplified navigation structure with no redundant or
+                          useless links, and a hamburger menu for smaller
+                          screens
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Visual Hierarchy</td>
+                        <td>
+                          Important buttons like "Register Here" were hard to
+                          find
+                        </td>
+                        <td>
+                          Prominently placed call-to-action buttons with high
+                          contrast colors
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Accessibility</td>
+                        <td>Poor contrast, missing alt text</td>
+                        <td>
+                          WCAG-compliant color contrast, proper alt text for all
+                          images
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Images</td>
+                        <td>Slow loading, difficult navigation</td>
+                        <td>
+                          Naturally scrolling gallery which moves for different
+                          screen sizes
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
+              <section class="section" id="conclusion">
+                <h2>Conclusion and Reflection</h2>
+                <div class="image-container">
+                  <img
+                    src="../assets/responsive-redesign/redesigned-website.png"
+                    alt="Screenshot of the redesigned OLY Swimming website"
+                  />
+                  <div class="image-caption">The redesigned website</div>
+                </div>
+
+                <p>
+                  This project taught me about the importance of responsive
+                  design and accessibility in creating effective web interfaces.
+                  By analyzing the original website's issues and addressing
+                  them, I was able to create a more user-friendly experience
+                  that meets modern web standards.
+                </p>
+
+                <div class="callout">
+                  <p>Key takeaways from this project:</p>
+                  <ul class="problems-list">
+                    <li>
+                      The importance of a consistent visual language and style
+                      guide
+                    </li>
+                    <li>
+                      How to prioritize content and features based on user needs
+                    </li>
+                    <li>
+                      How responsive design principles can accommodate diverse
+                      user needs
+                    </li>
+                  </ul>
+                </div>
+
+                <p>
+                  The redesigned website significantly improves the user
+                  experience by addressing the efficiency, learnability, and
+                  memorability issues identified in the original site while
+                  enhancing accessibility for all users.
+                </p>
+
+                <div style="text-align: center; margin-top: 2rem">
+                  <a
+                    href="https://sgsaab.github.io/redesigned-oly-website/"
+                    class="view-button"
+                    target="_blank"
+                    >View the Redesigned Website</a
+                  >
+                </div>
+              </section>
+            </div>
+          </div>
+        </main>
+      </div>
+      <footer>
+        <div class="footer-container">
+          <p>Designed and coded in Spring 2025 by Sana Saab</p>
+          <div class="social-links">
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/sgsaab"
+                  aria-label="GitHub"
+                  target="_blank"
+                >
+                  <img src="../assets/github.svg" alt="GitHub"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="mailto:sana_saab@brown.edu"
+                  aria-label="Email"
+                  target="_blank"
+                >
+                  <img src="../assets/email.svg" alt="Email"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/sanagsaab"
+                  aria-label="LinkedIn"
+                  target="_blank"
+                >
+                  <img src="../assets/linkedin.svg" alt="LinkedIn" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
