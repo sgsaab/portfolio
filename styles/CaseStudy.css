@@ -33,6 +33,10 @@
 }
 
 /* Typography */
+img {
+  max-width: 100%;
+  object-fit: contain;
+}
 h2 {
   font-size: 2.25rem;
   font-weight: normal;
@@ -60,6 +64,26 @@ p {
   margin-bottom: 1.5rem;
   color: var(--text-color);
   max-width: 100%;
+}
+
+ul, ol {
+  font-size: 1.25rem;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+li {
+  list-style: none;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.case-study-content ul li::before
+ {
+  content: "•";
+  position: absolute;
+  left: -1.5rem;
+  color: var(--accent-color);
 }
 
 /* Content sections */
@@ -93,6 +117,34 @@ p {
   flex-direction: column;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Examples grid */
+.sketches-grid {
+  display: grid;
+  margin: 2rem;
+}
+
+.sketch-card {
+  background-color: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.sketches-grid p{
+  color: black;
+  text-align: center;
+  vertical-align: center;
+  padding-top: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 0;
 }
 
 /* Modal overlay for expanded view */
@@ -209,26 +261,6 @@ p {
   min-height: 300px;
 }
 
-/* Lists */
-.bullet-list {
-  list-style-type: none;
-  padding-left: 0;
-  font-size: 1.25rem;
-}
-
-.bullet-list li {
-  margin-bottom: 1rem;
-  padding-left: 1.5rem;
-  position: relative;
-}
-
-.bullet-list li:before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: var(--accent-color);
-}
-
 /* State Models */
 .state-model-container {
   display: grid;
@@ -316,25 +348,6 @@ p {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   color: var(--text-color);
-}
-
-.component-features .bullet-list {
-  margin: 0;
-  padding-left: 1.5rem;
-}
-
-.component-features .bullet-list li {
-  margin-bottom: 0.75rem;
-  font-size: 1.25rem;
-  padding-left: 0;
-  position: relative;
-}
-
-.component-features .bullet-list li:before {
-  content: "•";
-  position: absolute;
-  left: -1.5rem;
-  color: var(--accent-color);
 }
 
 /* Modal styles */
@@ -459,29 +472,6 @@ th {
 td {
   font-size: 1rem;
   line-height: 1.5;
-}
-
-td .bullet-list {
-  margin: 0;
-  padding-left: 1.25rem;
-}
-
-td .bullet-list li {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  padding-left: 1rem;
-  position: relative;
-}
-
-td .bullet-list li:before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: var(--accent-color);
-}
-
-td .bullet-list li:last-child {
-  margin-bottom: 0;
 }
 
 /* Hero banner styles */
@@ -644,13 +634,16 @@ td .bullet-list li:last-child {
   margin: 0 auto; /* Center the nav */
 }
 
-
 .case-study-nav ul {
   list-style: none;
 }
 
 .case-study-nav li {
   margin-bottom: 0rem;
+}
+
+.case-study-content .case-study-nav ul li::before {
+  content: none;
 }
 
 .case-study-nav a {
@@ -680,23 +673,4 @@ td .bullet-list li:last-child {
   .case-study-nav {
     display: none;
   }
-}
-
-.problems-list {
-  list-style-type: none;
-  padding-left: 0;
-  font-size: 1.25rem;
-}
-
-.problems-list li {
-  margin-bottom: .5rem;
-  padding-left: 1.5rem;
-  position: relative;
-}
-
-.problems-list li:before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: var(--accent-color5);
 }

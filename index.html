@@ -1,55 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accessible Popups - Case Study</title>
-    <link rel="stylesheet" href="components.css">
-    <script defer src="case-study.js"></script>
-</head>
-<body>
-    <div class="home-container">
-        <nav>
-            <div class="header-container">
-              <a href="/" class="name-link">
-                <h1 class="name"><strong>Sana Saab</strong></h1>
-              </a>
-              <nav>
-                <ul>
-                  <li><a href="/" class="active">Projects</a></li>
-                  <li><a href="/about.html">About</a></li>
-                  <li><a href="/resume.html">Resume</a></li>
-                  <li>
-                    <a href="#" aria-label="Sun" class="sun-link">
-                      <img src="/assets/small-sun.svg" alt="Sun" class="sun-icon" />
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-        </nav>
-          <footer>
-            <div className="footer-container">
-              <p>Designed and coded in Spring 2025 by Sana Saab</p>
-              <ul>
-                  <li><a href="https://github.com/sgsaab" aria-label="GitHub" target="_blank">
-                  <img src="{githubLogo}" alt="GitHub" /></a></li>
-                  <li><a href="mailto:sana_saab@brown.edu" aria-label="Email" target="_blank">
-                  <img src="{emailLogo}" alt="Email" /></a></li>
-                  <li>
-                    <a
-                      href="https://www.linkedin.com/in/sanagsaab"
-                      aria-label="LinkedIn"
-                      target="_blank"
-                    >
-                      <img src="{linkedinLogo}" alt="LinkedIn" />
-                    </a>
-                  </li>
-              </ul>
-              </div>
-            </div>
-          </footer>
-          
-    </div>
+    <link rel="stylesheet" href="/styles/components.css" />
+    <link rel="stylesheet" href="/styles/index.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div>
+      <nav>
+        <div class="header-container">
+          <a href="/" class="name-link">
+            <h1 class="name"><strong>Sana Saab</strong></h1>
+          </a>
+          <nav>
+            <ul>
+              <li><a href="/">Projects</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/docs/resume.pdf" target="_blank">Resume</a></li>
 
-</body>
+              <li>
+                <a href="" aria-label="Sun" class="toggle-theme">
+                  <img
+                    src="../assets/small-sun.svg"
+                    alt="Sun"
+                    class="sun-icon"
+                  />
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </nav>
+
+      <div class="home-container">
+        <p>Hi, I'm Sana</p>
+        <p>Welcome to my portfolio!</p>
+        <p>
+          I am a software engineer and designer with a passion for creating
+          accessible and user-friendly web applications.
+        </p>
+      </div>
+
+      <footer>
+        <div class="footer-container">
+          <p>Designed and coded in Spring 2025 by Sana Saab</p>
+          <div class="social-links">
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/sgsaab"
+                  aria-label="GitHub"
+                  target="_blank"
+                >
+                  <img src="../assets/github.svg" alt="GitHub"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="mailto:sana_saab@brown.edu"
+                  aria-label="Email"
+                  target="_blank"
+                >
+                  <img src="../assets/email.svg" alt="Email"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/sanagsaab"
+                  aria-label="LinkedIn"
+                  target="_blank"
+                >
+                  <img src="../assets/linkedin.svg" alt="LinkedIn" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

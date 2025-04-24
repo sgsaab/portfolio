@@ -12,6 +12,32 @@ The project is built with:
 - CSS for styling and responsive design
 - Vanilla JavaScript for responsiveness
 
+## Project Structure
+
+├── assets/ # svgs, photos, etc  
+│ ├── accessible-popups/ # case study specific assets  
+│ ├── partiful-itineraries/  
+│ ├── cloud.svg # home page and navbar assets  
+│ └── moon.svg...  
+├── docs/  
+│ └── resume.pdf  
+├── styles/  
+│ ├── CaseStudy.css # case study sites' styles  
+│ ├── Components.css # navbar, footer styles  
+│ └── index.css # whole page styles  
+├── about.html # my about page  
+├── index.html # home page  
+├── scripts.js # scripts for interactivity  
+└── README.md
+
 ## How to Use
 
 1. Right click on `index.html` and choose 'Open with Live Server' if in VSCode
+
+## Running To-do
+
+- Home page
+- About me page
+- Heros for partiful and responsive case studies
+- Logo for myself, maybe otter?
+- Image to go in the chrome section (logo)
