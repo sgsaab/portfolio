@@ -30,40 +30,99 @@
         text-align: center;
       }
 
-      .view-button {
-        display: inline-block;
-        margin: 1rem 1rem 1rem 0;
-        padding: 0.75rem 1.5rem;
-        background-color: var(--accent-color);
-        color: white;
-        text-decoration: none;
-        border-radius: 6px;
-        font-weight: 500;
-        transition: background-color 0.3s ease;
+      .case-study-banner img {
+        width: 30%;
+        height: auto;
+        border-radius: 8px;
       }
-
-      .view-button:hover {
-        background-color: #7a5d9b;
-      }
-
+      /* Header Banner */
       .case-study-banner {
-        background-color: var(--primary-color);
-        padding: 3rem;
-        border-radius: var(--border-radius);
-        margin-bottom: 2rem;
-        text-align: center;
-        max-width: 1200px;
+        width: 100%;
+        max-width: 3000px;
+        overflow: hidden;
+        border-radius: 8px;
+        margin: 2rem, 0;
+        display: flex;
+        flex-direction: row;
+        text-align: left;
+      }
+      .case-study-banner h2 {
+        text-align: left;
       }
 
-      .case-study-banner h1 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
+      .banner-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
       }
 
-      .case-study-banner p {
+      .banner-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--med-text);
+        margin: 0;
+      }
+
+      .banner-content {
+        padding-left: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Aligns items to the start (left) */
+        justify-content: space-around;
+        gap: 1.5rem;
+        text-align: left; /* Ensures that all text is left-aligned */
+      }
+
+      .title-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Aligns items to the start (left) */
+        gap: 0.5rem;
+      }
+
+      .banner-description {
+        color: var(--med-text);
+        max-width: 1000px;
+        margin: 0;
         font-size: 1.5rem;
-        max-width: 800px;
-        margin: 0 auto;
+        line-height: 1.4;
+      }
+
+      .banner-meta {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        font-size: 1.5rem;
+        color: var(--med-text);
+      }
+
+      .buttons-container {
+        display: flex;
+        gap: 1rem;
+        margin-top: 0.5rem;
+      }
+
+      .button {
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        font-size: 1rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        cursor: pointer;
+      }
+
+      .button {
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        border: 2px solid var(--light-text);
+      }
+
+      .button:hover {
+        background-color: var(--primary-color-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
     </style>
   </head>
@@ -100,11 +159,41 @@
             style="display: flex; justify-content: center; align-items: start"
           >
             <div class="case-study-banner">
-              <h1>Responsive Redesign</h1>
-              <p>
-                An analysis and redesign of OLY Swim Team's website, focusing on
-                usability, accessibility, and responsive design.
-              </p>
+              <img
+                src="../assets/responsive-redesign/poster.png"
+                alt="Responsive Redesign Banner"
+              />
+              <div class="banner-content">
+                <div class="title-container">
+                  <h2 class="banner-title">Responsive Redesign</h2>
+                  <p class="banner-description">
+                    An analysis and redesign of OLY Swim Team's website,
+                    focusing on usability, accessibility, and responsive design.
+                  </p>
+                </div>
+                <div class="banner-meta">
+                  <div><strong>Duration:</strong> Spring 2025</div>
+                  <div>
+                    <strong>Role:</strong> UX Designer, Frontend Software
+                    Engineer
+                  </div>
+                  <div><strong>Skills:</strong> Figma, HTML/CSS</div>
+                </div>
+                <div class="buttons-container">
+                  <a
+                    href="https://www.gomotionapp.com/team/mioly/page/home"
+                    target="_blank"
+                    class="button"
+                    >Original Website</a
+                  >
+                  <a
+                    href="https://sgsaab.github.io/redesigned-oly-website/"
+                    target="_blank"
+                    class="button"
+                    >Redesigned Website</a
+                  >
+                </div>
+              </div>
             </div>
           </section>
 
@@ -130,24 +219,13 @@
                   and then correct them with a more user-friendly, accessible,
                   and responsive new website.
                 </p>
-                <a
-                  href="https://www.gomotionapp.com/team/mioly/page/home"
-                  class="view-button"
-                  target="_blank"
-                  >View Original Website</a
-                >
-                <a
-                  href="https://sgsaab.github.io/redesigned-oly-website/"
-                  class="view-button"
-                  target="_blank"
-                  >View Redesigned Website</a
-                >
                 <h3>Project Links</h3>
                 <p>
                   <strong>Original Website:</strong>
                   <a
                     href="https://www.gomotionapp.com/team/mioly/page/home"
                     target="_blank"
+                    class="link"
                     >OLY Swimming Home</a
                   >
                 </p>
@@ -156,6 +234,7 @@
                   <a
                     href="https://sgsaab.github.io/redesigned-oly-website/"
                     target="_blank"
+                    class="link"
                     >Redesigned OLY Website</a
                   >
                 </p>
@@ -174,10 +253,6 @@
                     src="../assets/responsive-redesign/original-website.png"
                     alt="Screenshot of the original OLY Swimming website"
                   />
-                  <div class="image-caption">
-                    The original website showing visual clutter and usability
-                    issues
-                  </div>
                 </div>
               </section>
 
@@ -271,24 +346,18 @@
                     src="../assets/responsive-redesign/style-guide.png"
                     alt="Style guide for the redesigned website"
                   />
-                  <div class="image-caption">
-                    Style guide with typography, colors, and components
-                  </div>
                 </div>
 
                 <h3>Mockups</h3>
                 <p>
-                  I also developed annotated mockups for three different screen
-                  sizes to ensure a responsive design:
+                  I also developed annotated mockups for desktop, tablet, and
+                  mobile views to ensure a responsive design:
                 </p>
                 <div class="image-container">
                   <img
                     src="../assets/responsive-redesign/annotated-mockups.png"
                     alt="Figma mockups for the redesigned website"
                   />
-                  <div class="image-caption">
-                    Responsive mockups for desktop, tablet, and mobile views
-                  </div>
                 </div>
 
                 <p>
@@ -424,7 +493,7 @@
                 <div style="text-align: center; margin-top: 2rem">
                   <a
                     href="https://sgsaab.github.io/redesigned-oly-website/"
-                    class="view-button"
+                    class="button"
                     target="_blank"
                     >View the Redesigned Website</a
                   >

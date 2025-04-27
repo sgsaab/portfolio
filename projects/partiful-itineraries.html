@@ -9,15 +9,24 @@
     <link rel="stylesheet" href="../styles/index.css" />
     <script src="../script.js" defer></script>
     <style>
+      .case-study-banner img {
+        width: 40%;
+        height: auto;
+        border-radius: 8px;
+      }
       /* Header Banner */
       .case-study-banner {
         width: 100%;
         max-width: 3000px;
         overflow: hidden;
         border-radius: 8px;
-        border: 3px solid var(--med-text);
-        background-color: var(--accent-color2);
-        margin: 5rem auto;
+        margin: 2rem, 0;
+        display: flex;
+        flex-direction: row;
+        text-align: left;
+      }
+      .case-study-banner h2 {
+        text-align: left;
       }
 
       .banner-header {
@@ -25,8 +34,6 @@
         justify-content: space-between;
         align-items: center;
         padding: 0.5rem 1rem;
-        background-color: var(--accent-color5);
-        border-bottom: 3px solid var(--med-text);
       }
 
       .banner-title {
@@ -36,30 +43,24 @@
         margin: 0;
       }
 
-      .banner-buttons {
-        display: flex;
-        gap: 1.5rem;
-      }
-
-      .dark-mode .banner-button {
-        filter: invert(1);
-      }
-
-      .banner-button {
-        width: 24px;
-        height: 24px;
-      }
-
       .banner-content {
-        padding: 2rem;
+        padding-left: 2rem;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start; /* Aligns items to the start (left) */
+        justify-content: space-around;
         gap: 1.5rem;
+        text-align: left; /* Ensures that all text is left-aligned */
+      }
+
+      .title-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Aligns items to the start (left) */
+        gap: 0.5rem;
       }
 
       .banner-description {
-        text-align: center;
         color: var(--med-text);
         max-width: 1000px;
         margin: 0;
@@ -73,56 +74,6 @@
         gap: 3rem;
         font-size: 1.5rem;
         color: var(--med-text);
-      }
-
-      .banner-cta {
-        padding: 0.75rem 1.5rem;
-        border-radius: 9999px;
-        color: var(--med-text);
-        font-weight: 500;
-        border: 3px solid var(--med-text);
-        background-color: var(--accent-color5);
-        cursor: pointer;
-        font-size: 1.25rem;
-        text-decoration: none;
-        transition: background-color 0.3s ease;
-      }
-
-      .banner-cta:hover {
-        background-color: var(--accent-color55);
-      }
-
-      .wireframe-images img,
-      .examples-grid img {
-        width: 100%;
-        max-width: 800px;
-        height: auto;
-        margin: 1rem 0;
-      }
-
-      .sketch-image img {
-        width: 100%;
-        max-width: 800px;
-        height: auto;
-        margin: 0 auto;
-        display: block;
-      }
-
-      .figma-embed {
-        width: 100%;
-        height: 500px;
-        margin: 2rem 0;
-      }
-
-      .before-after {
-        display: flex;
-        margin-bottom: 1rem;
-      }
-
-      .before,
-      .after {
-        flex: 1;
-        padding: 1rem;
       }
     </style>
   </head>
@@ -159,46 +110,23 @@
             style="display: flex; justify-content: center; align-items: start"
           >
             <div class="case-study-banner">
-              <!-- Header with title and buttons -->
-              <div class="banner-header">
-                <h2 class="banner-title">
-                  Iterative Design: Partiful Itineraries
-                </h2>
-                <div class="banner-buttons">
-                  <img
-                    src="../assets/accessible-popups/minimize.svg"
-                    alt=""
-                    class="banner-button"
-                  />
-                  <img
-                    src="../assets/accessible-popups/expand.svg"
-                    alt=""
-                    class="banner-button"
-                  />
-                  <img
-                    src="../assets/accessible-popups/close.svg"
-                    alt=""
-                    class="banner-button"
-                  />
-                </div>
-              </div>
-
-              <!-- Content area -->
+              <img
+                src="../assets/partiful-itineraries/partiful-poster.png"
+                alt="Partiful Itineraries Banner"
+              />
               <div class="banner-content">
-                <p class="banner-description">
-                  Iterating from sketches to high-fidelity prototypes to solve a
-                  real-world design challenge
-                </p>
-
+                <div class="title-container">
+                  <h2 class="banner-title">Partiful Itineraries</h2>
+                  <p class="banner-description">
+                    Iterating from sketches to high-fidelity prototypes to solve
+                    a real-world design challenge
+                  </p>
+                </div>
                 <div class="banner-meta">
                   <div><strong>Duration:</strong> Spring 2025</div>
                   <div><strong>Role:</strong> UX Designer</div>
                   <div><strong>Skills:</strong> Iterative Design, Figma</div>
                 </div>
-
-                <a href="#introduction" class="banner-cta">
-                  <strong>Read Case Study</strong>
-                </a>
               </div>
             </div>
           </section>
@@ -210,7 +138,7 @@
                 <li><a href="#approach">Our Approach</a></li>
                 <li><a href="#sketches">Sketches</a></li>
                 <li><a href="#wireframes">Lo-fi Wireframes</a></li>
-                <li><a href="#feedback">Wireframe Critique</a></li>
+                <li><a href="#feedback">Critique</a></li>
                 <li><a href="#hifi">Hi-Fi Prototype</a></li>
                 <li><a href="#reflection">Conclusion</a></li>
               </ul>

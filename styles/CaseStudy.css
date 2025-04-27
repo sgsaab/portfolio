@@ -33,6 +33,9 @@
 }
 
 /* Typography */
+.dark-mode .link{
+  color: rgb(108, 183, 208)
+}
 img {
   max-width: 100%;
   object-fit: contain;
@@ -72,6 +75,10 @@ ul, ol {
   margin-bottom: 1.5rem;
 }
 
+.problems-list {
+  margin-top: 1rem;
+}
+
 li {
   list-style: none;
   margin-bottom: 1rem;
@@ -100,7 +107,6 @@ li {
   margin-bottom: 0;
 }
 
-/* Examples grid */
 .examples-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -119,7 +125,6 @@ li {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Examples grid */
 .sketches-grid {
   display: grid;
   margin: 2rem;
@@ -445,8 +450,9 @@ li {
   width: 100%;
   overflow-x: auto;
   margin: 2rem 0;
-  border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+
 }
 
 table {
@@ -458,7 +464,7 @@ table {
 th, td {
   padding: 1.25rem;
   text-align: left;
-  border: 1px solid var(--light-text);
+  /* border: 1px solid var(--light-text); */
   vertical-align: top;
 }
 
@@ -466,12 +472,9 @@ th {
   background-color: var(--accent-color2);
   color: var(--text-color);
   font-weight: 600;
-  font-size: 1.1rem;
 }
 
 td {
-  font-size: 1rem;
-  line-height: 1.5;
 }
 
 /* Hero banner styles */
@@ -636,6 +639,7 @@ td {
 
 .case-study-nav ul {
   list-style: none;
+  padding: 0;
 }
 
 .case-study-nav li {
@@ -652,6 +656,7 @@ td {
   font-size: 1.5rem;
   display: block;
   padding: 0.5rem;
+  padding-left: 0;
   border-radius: 6px;
   transition: all 0.2s ease;
 }
@@ -673,4 +678,35 @@ td {
   .case-study-nav {
     display: none;
   }
+}
+
+.figma-embed {
+  width: 100%;
+  height: 500px;
+  margin: 2rem 0;
+}
+.wireframe-images img,
+.examples-grid img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin: 1rem 0;
+}
+
+.sketch-image img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+.before-after {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.before,
+.after {
+  flex: 1;
+  padding: 1rem;
 }
