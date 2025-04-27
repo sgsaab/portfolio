@@ -8,56 +8,62 @@
     <link rel="stylesheet" href="/styles/index.css" />
     <script defer src="script.js"></script>
     <style>
+      body > div {
+        width: 100%;
+      }
+        
       .main-container {
-          max-width: 1200px;
-          width: 100%;
+        padding-left: 6rem;
+        padding-right: 6rem;
       }
-
-      .header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 1rem 0;
-          position: relative;
-      }
+    
+      /* .sun-icon {
+        display: none;
+      } */
 
       .hero-section {
-          position: relative;
-          text-align: center;
-          padding: 4rem 0;
-          min-height: 400px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
+        margin-top: -2rem;
+        position: relative;
+        text-align: center;
+        padding: 4rem 0;
+        min-height: 400px;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
 
       .hero-section h1 {
-          font-size: 3.5rem;
-          margin-bottom: 1rem;
-          z-index: 2;
+        font-size: 3.5rem;
+        font-weight: normal;
       }
 
       .hero-section p {
-          font-size: 1.5rem;
-          max-width: 600px;
-          margin: 0 auto;
-          z-index: 2;
+        font-size: 1.75rem;
+        max-width: 60%;
+        margin: 0;
       }
 
       .social-icons {
-          display: flex;
-          gap: 1.5rem;
-          margin-top: 2rem;
-          z-index: 2;
+        margin-top: 1rem;
       }
 
-      .social-icons a {
-          color: var(--text-color);
-          font-size: 1.5rem;
-          text-decoration: none;
+      .dark-mode .social-icons {
+        filter: invert(1);
       }
 
+      .social-icons ul {
+        display: flex;
+        list-style: none;
+        gap: 1rem;
+      }
+
+      .social-icons img { 
+        width: 30px;
+        height: 30px;
+      }
+      
       /* Projects Grid */
       .projects-grid {
         display: grid;
@@ -78,8 +84,8 @@
       }
 
       .project-image {
-          height: 300px;
-          width: 100%;
+        height: 300px;
+        width: 100%;
       }
 
       .project-image-1 {
@@ -87,11 +93,11 @@
       }
 
       .project-image-2 {
-          background-color: var(--accent-color3);
+          background-color: var(--accent-color4);
       }
 
       .project-image-3 {
-          background-color: var(--accent-color4);
+          background-color: var(--accent-color3);
       }
 
       .project-image-4 {
@@ -104,6 +110,10 @@
 
       .project-details h3 {
           margin-bottom: 0.5rem;
+      }
+
+      .project-details p {
+          margin-bottom: 0;
       }
 
       /* Decorative elements */
@@ -173,7 +183,7 @@
 </style>
   </head>
   <body>
-    <div class="main-container">
+    <div>
       <nav>
         <div class="header-container">
           <a href="/" class="name-link">
@@ -198,6 +208,8 @@
           </nav>
         </div>
       </nav>
+
+      <div class="main-container">
 
       <section class="hero-section">
         <!-- Cloud 1 -->
@@ -324,87 +336,81 @@
           core
         </p>
         <div class="social-icons">
-          <a href="#github" aria-label="GitHub">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M12 0C5.37 0 0 5.37 0 12C0 17.31 3.435 21.795 8.205 23.385C8.805 23.49 9.03 23.13 9.03 22.815C9.03 22.53 9.015 21.585 9.015 20.58C6 21.135 5.22 19.845 4.98 19.17C4.845 18.825 4.26 17.76 3.75 17.475C3.33 17.25 2.73 16.695 3.735 16.68C4.68 16.665 5.355 17.55 5.58 17.91C6.66 19.725 8.385 19.215 9.075 18.9C9.18 18.12 9.495 17.595 9.84 17.295C7.17 16.995 4.38 15.96 4.38 11.37C4.38 10.065 4.845 8.985 5.61 8.145C5.49 7.845 5.07 6.615 5.73 4.965C5.73 4.965 6.735 4.65 9.03 6.195C9.99 5.925 11.01 5.79 12.03 5.79C13.05 5.79 14.07 5.925 15.03 6.195C17.325 4.635 18.33 4.965 18.33 4.965C18.99 6.615 18.57 7.845 18.45 8.145C19.215 8.985 19.68 10.05 19.68 11.37C19.68 15.975 16.875 16.995 14.205 17.295C14.64 17.67 15.015 18.39 15.015 19.515C15.015 21.12 15 22.41 15 22.815C15 23.13 15.225 23.505 15.825 23.385C18.2072 22.5807 20.2772 21.0497 21.7437 19.0074C23.2101 16.965 23.9993 14.5143 24 12C24 5.37 18.63 0 12 0Z"
-                fill="currentColor"
-              />
-            </svg>
-          </a>
-          <a href="#email" aria-label="Email">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6ZM20 6L12 11L4 6H20ZM20 18H4V8L12 13L20 8V18Z"
-                fill="currentColor"
-              />
-            </svg>
-          </a>
-          <a href="#linkedin" aria-label="LinkedIn">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M19 3C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19ZM18.5 18.5V13.2C18.5 12.3354 18.1565 11.5062 17.5452 10.8948C16.9338 10.2835 16.1046 9.94 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17C14.6813 12.17 15.0374 12.3175 15.2999 12.5801C15.5625 12.8426 15.71 13.1987 15.71 13.57V18.5H18.5ZM6.88 8.56C7.32556 8.56 7.75288 8.383 8.06794 8.06794C8.383 7.75288 8.56 7.32556 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19C6.43178 5.19 6.00193 5.36805 5.68499 5.68499C5.36805 6.00193 5.19 6.43178 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56ZM8.27 18.5V10.13H5.5V18.5H8.27Z"
-                fill="currentColor"
-              />
-            </svg>
-          </a>
+          <ul>
+            <li>
+              <a
+                href="https://github.com/sgsaab"
+                aria-label="GitHub"
+                target="_blank"
+              >
+                <img src="../assets/github.svg" alt="GitHub"
+              /></a>
+            </li>
+            <li>
+              <a
+                href="mailto:sana_saab@brown.edu"
+                aria-label="Email"
+                target="_blank"
+              >
+                <img src="../assets/email.svg" alt="Email"
+              /></a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/sanagsaab"
+                aria-label="LinkedIn"
+                target="_blank"
+              >
+                <img src="../assets/linkedin.svg" alt="LinkedIn" />
+              </a>
+            </li>
+          </ul>
         </div>
-      </section>
+    </section>
 
       <section id="projects" class="projects-grid">
-        <div class="project-card">
-          <div class="project-image project-image-1"></div>
-          <div class="project-details">
-            <h3>Accessible Popups</h3>
-            <p>Short Description</p>
+        <a href="/projects/partiful-itineraries.html">
+          <div class="project-card">
+            <div class="project-image project-image-1"></div>
+            <div class="project-details">
+              <h2>Partiful Itineraries</h2>
+              <p>Working with partiful to design itineraries.</p>
+              </p>
+            </div>
           </div>
-        </div>
+      </a>
 
+      <a href="https://github.com/sgsaab/url-shortener">
         <div class="project-card">
           <div class="project-image project-image-2"></div>
           <div class="project-details">
-            <h3>Project's Name</h3>
-            <p>Short Description</p>
+            <h2>URL Shortener</h2>
+            <p>A basic url shortening application with a database</p>
           </div>
         </div>
+      </a>
 
+      <a href="/projects/accessible-popups.html">
         <div class="project-card">
           <div class="project-image project-image-3"></div>
           <div class="project-details">
-            <h3>Project's Name</h3>
-            <p>Short Description</p>
+            <h2>Accessible Popups</h2>
+            <p>Investigating popups and improving their accessibility.</p>
           </div>
         </div>
+      </a>
 
+      <a href="/projects/responsive-redesign.html">
         <div class="project-card">
           <div class="project-image project-image-4"></div>
           <div class="project-details">
-            <h3>Project's Name</h3>
-            <p>Short Description</p>
+            <h2>Responsive Redesign</h2>
+            <p>Redesigning a webpage to be more responsive.</p>
           </div>
         </div>
+      </a>
       </section>
-
+    </div>
       <footer>
         <div class="footer-container">
           <p>Designed and coded in Spring 2025 by Sana Saab</p>

@@ -59,10 +59,12 @@ footer p {
   }
     
   .header-container {
-    padding: 0rem 6rem;
+    padding-left: 6rem;
+    padding-right: 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 76px;
   }
 
   .name {
@@ -84,10 +86,10 @@ footer p {
   nav a {
     text-decoration: none;
     color: var(--light-text);
-    font-size: 1.125rem; /* Even smaller */
+    font-size: 1.125rem; 
     transition: all 0.3s ease;
     position: relative;
-    display: inline-block; /* This helps with the transform */
+    display: inline-block; 
   }
   
   nav a:not(.toggle-theme):not(.name-link):hover{

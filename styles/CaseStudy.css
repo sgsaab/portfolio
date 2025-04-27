@@ -1,5 +1,4 @@
 .case-study {
-  max-width: 95%;
   margin: 0 auto;
   text-align: left;
   margin: 0rem 6rem;
@@ -34,8 +33,14 @@
 }
 
 /* Typography */
+.link{
+  color: rgb(17, 77, 196);
+  text-decoration: underline;
+}
+
 .dark-mode .link{
-  color: rgb(108, 183, 208)
+  color: rgb(108, 183, 208);
+  text-decoration: underline;
 }
 img {
   max-width: 100%;
@@ -80,7 +85,7 @@ ul, ol {
   margin-top: 1rem;
 }
 
-li {
+li:not(.nav-list) {
   list-style: none;
   margin-bottom: 1rem;
   position: relative;
