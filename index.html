@@ -7,26 +7,15 @@
     <link rel="stylesheet" href="/styles/components.css" />
     <link rel="stylesheet" href="/styles/index.css" />
     <script defer src="script.js"></script>
-    <style>
-      body > div {
-        width: 100%;
-      }
-        
-      .main-container {
-        padding-left: 6rem;
-        padding-right: 6rem;
-      }
-    
-      /* .sun-icon {
+    <style>    
+      .sun-icon {
         display: none;
-      } */
+      }
 
       .hero-section {
         margin-top: -2rem;
         position: relative;
         text-align: center;
-        padding: 4rem 0;
-        min-height: 400px;
         height: 80vh;
         display: flex;
         flex-direction: column;
@@ -35,8 +24,9 @@
       }
 
       .hero-section h1 {
-        font-size: 3.5rem;
+        font-size: 4rem;
         font-weight: normal;
+        margin-bottom: -.5rem;
       }
 
       .hero-section p {
@@ -118,50 +108,53 @@
 
       /* Decorative elements */
       .cloud {
-          position: absolute;
-          z-index: 1;
-          opacity: 0.8;
+        position: absolute;
+        z-index: 1;
+        opacity: 0.8;
       }
 
       .cloud-1 {
-          top: 100px;
-          left: 150px;
+        top: 4rem;
+        left: 6rem;
+        width: 7.5rem;
       }
 
       .cloud-2 {
-          bottom: 250px;
-          right: 70px;
+        bottom: 10rem;
+        right: 1rem;
+        width: 7.5rem;
       }
 
       .cloud-3 {
-          bottom: 100px;
-          left: 50px;
+        width: 20rem;
+        bottom: 2rem;
+        left: -1rem;
       }
 
       .cloud-4 {
-          top: 150px;
-          right: 200px;
+        width: 6rem;
+        bottom: 5rem;
+        right: 10rem;
       }
 
-      .sun {
+      .big-sun {
           position: absolute;
-          top: 120px;
-          right: 100px;
-          z-index: 1;
+          top: 2rem;
+          right: -2rem;
+          z-index: 0;
           transition: transform 0.3s ease;
           cursor: pointer;
       }
 
-      .sun:hover {
+      .big-sun:hover {
           transform: rotate(15deg);
       }
 
       .click-me {
           position: absolute;
-          top: 80px;
-          right: 150px;
-          font-weight: bold;
-          font-style: italic;
+          top: 2rem;
+          right: 7rem;
+          z-index: 2;
       }
 
       /* Cloud SVG styles */
@@ -185,7 +178,7 @@
   <body>
     <div>
       <nav>
-        <div class="header-container">
+        <div class="header-container" style="padding-right: 4rem">
           <a href="/" class="name-link">
             <h1 class="name"><strong>Sana Saab</strong></h1>
           </a>
@@ -212,122 +205,25 @@
       <div class="main-container">
 
       <section class="hero-section">
-        <!-- Cloud 1 -->
         <div class="cloud cloud-1">
-          <svg class="cloud-svg" width="120" height="70" viewBox="0 0 120 70">
-            <path
-              d="M30,50 Q40,37 55,45 Q65,30 75,40 Q90,25 100,40 Q115,35 110,50 Q120,60 100,60 Q90,75 70,60 Q55,70 50,60 Q35,65 30,50 Z"
-            ></path>
-          </svg>
+          <img src="../assets/cloud.svg" alt="Cloud" class="cloud-svg" />
         </div>
 
-        <!-- Cloud 2 -->
         <div class="cloud cloud-2">
-          <svg class="cloud-svg" width="150" height="90" viewBox="0 0 150 90">
-            <path
-              d="M40,65 Q50,52 70,60 Q80,40 95,55 Q115,35 125,55 Q145,45 135,65 Q150,80 120,78 Q110,95 85,78 Q65,90 60,78 Q40,85 40,65 Z"
-            ></path>
-          </svg>
+          <img src="../assets/cloud.svg" alt="Cloud" class="cloud-svg" />
         </div>
 
-        <!-- Cloud 3 -->
         <div class="cloud cloud-3">
-          <svg class="cloud-svg" width="180" height="100" viewBox="0 0 180 100">
-            <path
-              d="M50,75 Q65,57 85,70 Q100,50 115,65 Q135,45 145,65 Q165,55 155,75 Q170,90 140,88 Q130,105 105,88 Q85,100 80,88 Q60,95 50,75 Z"
-            ></path>
-          </svg>
+          <img src="../assets/stacked-clouds.svg" alt="Two clouds overlapping" class="cloud-svg" />
         </div>
 
-        <!-- Cloud 4 -->
         <div class="cloud cloud-4">
-          <svg class="cloud-svg" width="100" height="60" viewBox="0 0 100 60">
-            <path
-              d="M25,45 Q35,32 45,40 Q55,25 65,35 Q75,20 85,35 Q95,30 90,45 Q100,55 85,55 Q75,65 60,55 Q50,65 45,55 Q30,60 25,45 Z"
-            ></path>
-          </svg>
+          <img src="../assets/cloud.svg" alt="Cloud" class="cloud-svg" />
         </div>
 
-        <!-- Sun with click me text -->
-        <div class="sun">
-          <span class="click-me">Click Me</span>
-          <svg width="80" height="80" viewBox="0 0 100 100" class="sun-svg">
-            <circle cx="50" cy="50" r="25" />
-            <!-- Sun rays -->
-            <line
-              class="sun-ray"
-              x1="50"
-              y1="15"
-              x2="50"
-              y2="5"
-              stroke-width="4"
-              stroke="var(--accent-color)"
-            />
-            <line
-              class="sun-ray"
-              x1="50"
-              y1="85"
-              x2="50"
-              y2="95"
-              stroke-width="4"
-              stroke="var(--accent-color)"
-            />
-            <line
-              class="sun-ray"
-              x1="15"
-              y1="50"
-              x2="5"
-              y2="50"
-              stroke-width="4"
-              stroke="var(--accent-color)"
-            />
-            <line
-              class="sun-ray"
-              x1="85"
-              y1="50"
-              x2="95"
-              y2="50"
-              stroke-width="4"
-              stroke="var(--accent-color)"
-            />
-
-            <line
-              class="sun-ray"
-              x1="25"
-              y1="25"
-              x2="15"
-              y2="15"
-              stroke-width="4"
-              stroke="var(--accent-color)"
-            />
-            <line
-              class="sun-ray"
-              x1="75"
-              y1="25"
-              x2="85"
-              y2="15"
-              stroke-width="4"
-              stroke="var(--accent-color)"
-            />
-            <line
-              class="sun-ray"
-              x1="25"
-              y1="75"
-              x2="15"
-              y2="85"
-              stroke-width="4"
-              stroke="var(--accent-color)"
-            />
-            <line
-              class="sun-ray"
-              x1="75"
-              y1="75"
-              x2="85"
-              y2="85"
-              stroke-width="4"
-              stroke="var(--accent-color)"
-            />
-          </svg>
+        <img class="click-me" src="../assets/click-me.svg" alt="Click Me" />
+        <div class="big-sun">
+          <img src="../assets/big-sun.svg" alt="Sun" class="sun-svg" />
         </div>
 
         <h1>Hi, I'm Sana!</h1>
@@ -385,7 +281,7 @@
           <div class="project-image project-image-2"></div>
           <div class="project-details">
             <h2>URL Shortener</h2>
-            <p>A basic url shortening application with a database</p>
+            <p>Basic url shortener server with a database</p>
           </div>
         </div>
       </a>

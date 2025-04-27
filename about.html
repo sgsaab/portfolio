@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Sana Saab</title>
+    <link rel="stylesheet" href="/styles/components.css" />
+    <link rel="stylesheet" href="/styles/index.css" />
+    <script defer src="script.js"></script>
+</style>
+  </head>
+  <body>
+    <div>
+      <nav>
+        <div class="header-container">
+          <a href="/" class="name-link">
+            <h1 class="name"><strong>Sana Saab</strong></h1>
+          </a>
+          <nav>
+            <ul>
+              <li><a href="/">Projects</a></li>
+              <li><a href="/about.html" class="active">About</a></li>
+              <li><a href="/docs/resume.pdf" target="_blank">Resume</a></li>
+
+              <li>
+                <a href="" aria-label="Sun" class="toggle-theme">
+                  <img
+                    src="../assets/small-sun.svg"
+                    alt="Sun"
+                    class="sun-icon"
+                  />
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </nav>
+
+      <div class="main-container">
+
+        <h2>WOMP</h2>
+        <p>Womp womp womp womp womp womp. Womp womp womp womp womp womp womp womp womp womp womp womp womp womp womp womp womp womp womp womp womp womp womp womp womp
+      </div>
+      <footer>
+        <div class="footer-container">
+          <p>Designed and coded in Spring 2025 by Sana Saab</p>
+          <div class="social-links">
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/sgsaab"
+                  aria-label="GitHub"
+                  target="_blank"
+                >
+                  <img src="../assets/github.svg" alt="GitHub"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="mailto:sana_saab@brown.edu"
+                  aria-label="Email"
+                  target="_blank"
+                >
+                  <img src="../assets/email.svg" alt="Email"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/sanagsaab"
+                  aria-label="LinkedIn"
+                  target="_blank"
+                >
+                  <img src="../assets/linkedin.svg" alt="LinkedIn" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script>
+      // Add parallax effect to clouds
+      window.addEventListener("scroll", function () {
+        const scrollPosition = window.scrollY;
+
+        // Apply different speeds for different clouds to create parallax effect
+        document.querySelector(".cloud-1").style.transform = `translateX(${
+          scrollPosition * -0.05
+        }px)`;
+        document.querySelector(".cloud-2").style.transform = `translateX(${
+          scrollPosition * 0.03
+        }px)`;
+        document.querySelector(".cloud-3").style.transform = `translateX(${
+          scrollPosition * -0.02
+        }px)`;
+        document.querySelector(".cloud-4").style.transform = `translateX(${
+          scrollPosition * 0.04
+        }px)`;
+      });
+
+      // Sun click effect - Toggle between day/night (you can expand on this later for dark mode)
+      document.querySelector(".sun").addEventListener("click", function () {
+        this.classList.toggle("active");
+        // You can expand this to trigger dark mode later
+        alert("Sun clicked! You can expand this to toggle dark mode.");
+      });
+    </script>
+  </body>
+</html>
