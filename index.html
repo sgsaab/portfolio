@@ -3,13 +3,177 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accessible Popups - Case Study</title>
+    <title>Sana Saab</title>
     <link rel="stylesheet" href="/styles/components.css" />
     <link rel="stylesheet" href="/styles/index.css" />
     <script defer src="script.js"></script>
+    <style>
+      .main-container {
+          max-width: 1200px;
+          width: 100%;
+      }
+
+      .header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem 0;
+          position: relative;
+      }
+
+      .hero-section {
+          position: relative;
+          text-align: center;
+          padding: 4rem 0;
+          min-height: 400px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+      }
+
+      .hero-section h1 {
+          font-size: 3.5rem;
+          margin-bottom: 1rem;
+          z-index: 2;
+      }
+
+      .hero-section p {
+          font-size: 1.5rem;
+          max-width: 600px;
+          margin: 0 auto;
+          z-index: 2;
+      }
+
+      .social-icons {
+          display: flex;
+          gap: 1.5rem;
+          margin-top: 2rem;
+          z-index: 2;
+      }
+
+      .social-icons a {
+          color: var(--text-color);
+          font-size: 1.5rem;
+          text-decoration: none;
+      }
+
+      /* Projects Grid */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 5rem;
+      }
+
+      .project-card {
+          border-radius: var(--border-radius);
+          overflow: hidden;
+          box-shadow: var(--box-shadow);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .project-card:hover {
+          transform: translateY(-10px) scale(1.02);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .project-image {
+          height: 300px;
+          width: 100%;
+      }
+
+      .project-image-1 {
+          background-color: var(--accent-color2);
+      }
+
+      .project-image-2 {
+          background-color: var(--accent-color3);
+      }
+
+      .project-image-3 {
+          background-color: var(--accent-color4);
+      }
+
+      .project-image-4 {
+          background-color: var(--accent-color5);
+      }
+
+      .project-details {
+          padding: 1.5rem;
+      }
+
+      .project-details h3 {
+          margin-bottom: 0.5rem;
+      }
+
+      /* Decorative elements */
+      .cloud {
+          position: absolute;
+          z-index: 1;
+          opacity: 0.8;
+      }
+
+      .cloud-1 {
+          top: 100px;
+          left: 150px;
+      }
+
+      .cloud-2 {
+          bottom: 250px;
+          right: 70px;
+      }
+
+      .cloud-3 {
+          bottom: 100px;
+          left: 50px;
+      }
+
+      .cloud-4 {
+          top: 150px;
+          right: 200px;
+      }
+
+      .sun {
+          position: absolute;
+          top: 120px;
+          right: 100px;
+          z-index: 1;
+          transition: transform 0.3s ease;
+          cursor: pointer;
+      }
+
+      .sun:hover {
+          transform: rotate(15deg);
+      }
+
+      .click-me {
+          position: absolute;
+          top: 80px;
+          right: 150px;
+          font-weight: bold;
+          font-style: italic;
+      }
+
+      /* Cloud SVG styles */
+      .cloud-svg {
+          fill: var(--primary-color);
+          filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+      }
+
+      /* Sun SVG styles */
+      .sun-svg {
+          fill: var(--accent-color);
+          filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+      }
+
+      .sun-ray {
+          fill: var(--accent-color);
+      }
+  </style>
+</style>
   </head>
   <body>
-    <div>
+    <div class="main-container">
       <nav>
         <div class="header-container">
           <a href="/" class="name-link">
@@ -17,7 +181,7 @@
           </a>
           <nav>
             <ul>
-              <li><a href="/">Projects</a></li>
+              <li><a href="/" class="active">Projects</a></li>
               <li><a href="/about.html">About</a></li>
               <li><a href="/docs/resume.pdf" target="_blank">Resume</a></li>
 
@@ -35,14 +199,211 @@
         </div>
       </nav>
 
-      <div class="home-container">
-        <p>Hi, I'm Sana</p>
-        <p>Welcome to my portfolio!</p>
+      <section class="hero-section">
+        <!-- Cloud 1 -->
+        <div class="cloud cloud-1">
+          <svg class="cloud-svg" width="120" height="70" viewBox="0 0 120 70">
+            <path
+              d="M30,50 Q40,37 55,45 Q65,30 75,40 Q90,25 100,40 Q115,35 110,50 Q120,60 100,60 Q90,75 70,60 Q55,70 50,60 Q35,65 30,50 Z"
+            ></path>
+          </svg>
+        </div>
+
+        <!-- Cloud 2 -->
+        <div class="cloud cloud-2">
+          <svg class="cloud-svg" width="150" height="90" viewBox="0 0 150 90">
+            <path
+              d="M40,65 Q50,52 70,60 Q80,40 95,55 Q115,35 125,55 Q145,45 135,65 Q150,80 120,78 Q110,95 85,78 Q65,90 60,78 Q40,85 40,65 Z"
+            ></path>
+          </svg>
+        </div>
+
+        <!-- Cloud 3 -->
+        <div class="cloud cloud-3">
+          <svg class="cloud-svg" width="180" height="100" viewBox="0 0 180 100">
+            <path
+              d="M50,75 Q65,57 85,70 Q100,50 115,65 Q135,45 145,65 Q165,55 155,75 Q170,90 140,88 Q130,105 105,88 Q85,100 80,88 Q60,95 50,75 Z"
+            ></path>
+          </svg>
+        </div>
+
+        <!-- Cloud 4 -->
+        <div class="cloud cloud-4">
+          <svg class="cloud-svg" width="100" height="60" viewBox="0 0 100 60">
+            <path
+              d="M25,45 Q35,32 45,40 Q55,25 65,35 Q75,20 85,35 Q95,30 90,45 Q100,55 85,55 Q75,65 60,55 Q50,65 45,55 Q30,60 25,45 Z"
+            ></path>
+          </svg>
+        </div>
+
+        <!-- Sun with click me text -->
+        <div class="sun">
+          <span class="click-me">Click Me</span>
+          <svg width="80" height="80" viewBox="0 0 100 100" class="sun-svg">
+            <circle cx="50" cy="50" r="25" />
+            <!-- Sun rays -->
+            <line
+              class="sun-ray"
+              x1="50"
+              y1="15"
+              x2="50"
+              y2="5"
+              stroke-width="4"
+              stroke="var(--accent-color)"
+            />
+            <line
+              class="sun-ray"
+              x1="50"
+              y1="85"
+              x2="50"
+              y2="95"
+              stroke-width="4"
+              stroke="var(--accent-color)"
+            />
+            <line
+              class="sun-ray"
+              x1="15"
+              y1="50"
+              x2="5"
+              y2="50"
+              stroke-width="4"
+              stroke="var(--accent-color)"
+            />
+            <line
+              class="sun-ray"
+              x1="85"
+              y1="50"
+              x2="95"
+              y2="50"
+              stroke-width="4"
+              stroke="var(--accent-color)"
+            />
+
+            <line
+              class="sun-ray"
+              x1="25"
+              y1="25"
+              x2="15"
+              y2="15"
+              stroke-width="4"
+              stroke="var(--accent-color)"
+            />
+            <line
+              class="sun-ray"
+              x1="75"
+              y1="25"
+              x2="85"
+              y2="15"
+              stroke-width="4"
+              stroke="var(--accent-color)"
+            />
+            <line
+              class="sun-ray"
+              x1="25"
+              y1="75"
+              x2="15"
+              y2="85"
+              stroke-width="4"
+              stroke="var(--accent-color)"
+            />
+            <line
+              class="sun-ray"
+              x1="75"
+              y1="75"
+              x2="85"
+              y2="85"
+              stroke-width="4"
+              stroke="var(--accent-color)"
+            />
+          </svg>
+        </div>
+
+        <h1>Hi, I'm Sana!</h1>
         <p>
-          I am a software engineer and designer with a passion for creating
-          accessible and user-friendly web applications.
+          A software engineer who builds with empathy and accessibility at the
+          core
         </p>
-      </div>
+        <div class="social-icons">
+          <a href="#github" aria-label="GitHub">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12 0C5.37 0 0 5.37 0 12C0 17.31 3.435 21.795 8.205 23.385C8.805 23.49 9.03 23.13 9.03 22.815C9.03 22.53 9.015 21.585 9.015 20.58C6 21.135 5.22 19.845 4.98 19.17C4.845 18.825 4.26 17.76 3.75 17.475C3.33 17.25 2.73 16.695 3.735 16.68C4.68 16.665 5.355 17.55 5.58 17.91C6.66 19.725 8.385 19.215 9.075 18.9C9.18 18.12 9.495 17.595 9.84 17.295C7.17 16.995 4.38 15.96 4.38 11.37C4.38 10.065 4.845 8.985 5.61 8.145C5.49 7.845 5.07 6.615 5.73 4.965C5.73 4.965 6.735 4.65 9.03 6.195C9.99 5.925 11.01 5.79 12.03 5.79C13.05 5.79 14.07 5.925 15.03 6.195C17.325 4.635 18.33 4.965 18.33 4.965C18.99 6.615 18.57 7.845 18.45 8.145C19.215 8.985 19.68 10.05 19.68 11.37C19.68 15.975 16.875 16.995 14.205 17.295C14.64 17.67 15.015 18.39 15.015 19.515C15.015 21.12 15 22.41 15 22.815C15 23.13 15.225 23.505 15.825 23.385C18.2072 22.5807 20.2772 21.0497 21.7437 19.0074C23.2101 16.965 23.9993 14.5143 24 12C24 5.37 18.63 0 12 0Z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+          <a href="#email" aria-label="Email">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6ZM20 6L12 11L4 6H20ZM20 18H4V8L12 13L20 8V18Z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+          <a href="#linkedin" aria-label="LinkedIn">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19 3C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19ZM18.5 18.5V13.2C18.5 12.3354 18.1565 11.5062 17.5452 10.8948C16.9338 10.2835 16.1046 9.94 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17C14.6813 12.17 15.0374 12.3175 15.2999 12.5801C15.5625 12.8426 15.71 13.1987 15.71 13.57V18.5H18.5ZM6.88 8.56C7.32556 8.56 7.75288 8.383 8.06794 8.06794C8.383 7.75288 8.56 7.32556 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19C6.43178 5.19 6.00193 5.36805 5.68499 5.68499C5.36805 6.00193 5.19 6.43178 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56ZM8.27 18.5V10.13H5.5V18.5H8.27Z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+        </div>
+      </section>
+
+      <section id="projects" class="projects-grid">
+        <div class="project-card">
+          <div class="project-image project-image-1"></div>
+          <div class="project-details">
+            <h3>Accessible Popups</h3>
+            <p>Short Description</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image project-image-2"></div>
+          <div class="project-details">
+            <h3>Project's Name</h3>
+            <p>Short Description</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image project-image-3"></div>
+          <div class="project-details">
+            <h3>Project's Name</h3>
+            <p>Short Description</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image project-image-4"></div>
+          <div class="project-details">
+            <h3>Project's Name</h3>
+            <p>Short Description</p>
+          </div>
+        </div>
+      </section>
 
       <footer>
         <div class="footer-container">
@@ -81,5 +442,32 @@
         </div>
       </footer>
     </div>
+    <script>
+      // Add parallax effect to clouds
+      window.addEventListener("scroll", function () {
+        const scrollPosition = window.scrollY;
+
+        // Apply different speeds for different clouds to create parallax effect
+        document.querySelector(".cloud-1").style.transform = `translateX(${
+          scrollPosition * -0.05
+        }px)`;
+        document.querySelector(".cloud-2").style.transform = `translateX(${
+          scrollPosition * 0.03
+        }px)`;
+        document.querySelector(".cloud-3").style.transform = `translateX(${
+          scrollPosition * -0.02
+        }px)`;
+        document.querySelector(".cloud-4").style.transform = `translateX(${
+          scrollPosition * 0.04
+        }px)`;
+      });
+
+      // Sun click effect - Toggle between day/night (you can expand on this later for dark mode)
+      document.querySelector(".sun").addEventListener("click", function () {
+        this.classList.toggle("active");
+        // You can expand this to trigger dark mode later
+        alert("Sun clicked! You can expand this to toggle dark mode.");
+      });
+    </script>
   </body>
 </html>
