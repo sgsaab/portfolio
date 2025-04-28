@@ -6,8 +6,12 @@
     <title>Sana Saab</title>
     <link rel="stylesheet" href="/styles/components.css" />
     <link rel="stylesheet" href="/styles/index.css" />
-    <script defer src="script.js"></script>
+    <script src="script.js"></script>
     <style>    
+      .dark-mode .click-me {
+        filter: invert(1);
+      }
+
       .sun-icon {
         display: none;
       }
@@ -62,48 +66,34 @@
       }
 
       .project-card {
-          border-radius: var(--border-radius);
-          overflow: hidden;
-          box-shadow: var(--box-shadow);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color: var(--bg);
       }
 
       .project-card:hover {
-          transform: translateY(-10px) scale(1.02);
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        transform: translateY(-10px);
+        box-shadow: var(--box-shadow-hover);
       }
 
       .project-image {
         height: 300px;
         width: 100%;
-      }
-
-      .project-image-1 {
-          background-color: var(--accent-color2);
-      }
-
-      .project-image-2 {
-          background-color: var(--accent-color4);
-      }
-
-      .project-image-3 {
-          background-color: var(--accent-color3);
-      }
-
-      .project-image-4 {
-          background-color: var(--accent-color5);
+        background-color: var(--primary-color)
       }
 
       .project-details {
-          padding: 1.5rem;
+        padding: 1.5rem;
       }
 
       .project-details h3 {
-          margin-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
       }
 
       .project-details p {
-          margin-bottom: 0;
+        margin-bottom: 0;
       }
 
       /* Decorative elements */
@@ -113,6 +103,24 @@
         opacity: 0.8;
       }
 
+      .dark-mode .cloud {
+        display: none;
+      }
+
+      .stars {
+        display: none;
+      }
+
+      .dark-mode .stars {
+        position: absolute;
+        display: block;
+      }
+
+      .stars-4 {
+        top: 6.5rem;
+        z-index: -1; 
+        height: 90rem; 
+      }
       .cloud-1 {
         top: 4rem;
         left: 6rem;
@@ -138,51 +146,34 @@
       }
 
       .big-sun {
-          position: absolute;
-          top: 2rem;
-          right: -2rem;
-          z-index: 0;
-          transition: transform 0.3s ease;
-          cursor: pointer;
+        position: absolute;
+        top: 2rem;
+        right: -2rem;
+        z-index: 3;
+        transition: transform 0.3s ease;
+        cursor: pointer;
       }
 
       .big-sun:hover {
-          transform: rotate(15deg);
+        transform: rotate(15deg);
       }
 
       .click-me {
-          position: absolute;
-          top: 2rem;
-          right: 7rem;
-          z-index: 2;
+        position: absolute;
+        top: 2rem;
+        right: 7rem;
+        z-index: 2;
       }
-
-      /* Cloud SVG styles */
-      .cloud-svg {
-          fill: var(--primary-color);
-          filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
-      }
-
-      /* Sun SVG styles */
-      .sun-svg {
-          fill: var(--accent-color);
-          filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
-      }
-
-      .sun-ray {
-          fill: var(--accent-color);
-      }
-  </style>
-</style>
+    </style>
   </head>
   <body>
     <div>
-      <nav>
+      <nav style="padding-bottom: 0; margin-bottom: 0.75rem">
         <div class="header-container" style="padding-right: 4rem">
           <a href="/" class="name-link">
             <h1 class="name"><strong>Sana Saab</strong></h1>
           </a>
-          <nav>
+          <nav style="padding-bottom: 0; margin-bottom: 0.75rem">
             <ul>
               <li><a href="/" class="active">Projects</a></li>
               <li><a href="/about.html">About</a></li>
@@ -205,27 +196,18 @@
       <div class="main-container">
 
       <section class="hero-section">
-        <div class="cloud cloud-1">
-          <img src="../assets/cloud.svg" alt="Cloud" class="cloud-svg" />
-        </div>
-
-        <div class="cloud cloud-2">
-          <img src="../assets/cloud.svg" alt="Cloud" class="cloud-svg" />
-        </div>
-
-        <div class="cloud cloud-3">
-          <img src="../assets/stacked-clouds.svg" alt="Two clouds overlapping" class="cloud-svg" />
-        </div>
-
-        <div class="cloud cloud-4">
-          <img src="../assets/cloud.svg" alt="Cloud" class="cloud-svg" />
-        </div>
+        <img src="../assets/cloud.svg" alt="Cloud" class="cloud cloud-1" />
+        <img src="../assets/cloud.svg" alt="Cloud" class="cloud cloud-2" />
+        <img src="../assets/stacked-clouds.svg" alt="Two clouds overlapping" class="cloud cloud-3" />
+        <img src="../assets/cloud.svg" alt="Cloud" class="cloud cloud-4" />
 
         <img class="click-me" src="../assets/click-me.svg" alt="Click Me" />
-        <div class="big-sun">
-          <img src="../assets/big-sun.svg" alt="Sun" class="sun-svg" />
-        </div>
+        <img src="../assets/big-sun.svg" alt="Sun" class="big-sun toggle-theme" />
 
+        <img src="../assets/bright-stars-1.svg" alt="Stars" class="stars stars-1" />
+        <img src="../assets/bright-stars-2.svg" alt="Stars" class="stars stars-2" />
+        <img src="../assets/bright-stars-3.svg" alt="Stars" class="stars stars-3" />
+        <img src="../assets/dim-stars.svg" alt="Stars" class="stars stars-4" />
         <h1>Hi, I'm Sana!</h1>
         <p>
           A software engineer who builds with empathy and accessibility at the
@@ -263,48 +245,48 @@
           </ul>
         </div>
     </section>
-
       <section id="projects" class="projects-grid">
+
         <a href="/projects/partiful-itineraries.html">
           <div class="project-card">
-            <div class="project-image project-image-1"></div>
+            <div class="project-image"></div>
             <div class="project-details">
               <h2>Partiful Itineraries</h2>
               <p>Working with partiful to design itineraries.</p>
               </p>
             </div>
           </div>
-      </a>
+        </a>
 
-      <a href="https://github.com/sgsaab/url-shortener">
-        <div class="project-card">
-          <div class="project-image project-image-2"></div>
-          <div class="project-details">
-            <h2>URL Shortener</h2>
-            <p>Basic url shortener server with a database</p>
+        <a href="https://github.com/sgsaab/url-shortener">
+          <div class="project-card">
+            <div class="project-image"></div>
+            <div class="project-details">
+              <h2>URL Shortener</h2>
+              <p>Basic url shortener server with a database</p>
+            </div>
           </div>
-        </div>
-      </a>
+        </a>
 
-      <a href="/projects/accessible-popups.html">
-        <div class="project-card">
-          <div class="project-image project-image-3"></div>
-          <div class="project-details">
-            <h2>Accessible Popups</h2>
-            <p>Investigating popups and improving their accessibility.</p>
+        <a href="/projects/accessible-popups.html">
+          <div class="project-card">
+            <div class="project-image"></div>
+            <div class="project-details">
+              <h2>Accessible Popups</h2>
+              <p>Investigating popups and improving their accessibility.</p>
+            </div>
           </div>
-        </div>
-      </a>
+        </a>
 
-      <a href="/projects/responsive-redesign.html">
-        <div class="project-card">
-          <div class="project-image project-image-4"></div>
-          <div class="project-details">
-            <h2>Responsive Redesign</h2>
-            <p>Redesigning a webpage to be more responsive.</p>
+        <a href="/projects/responsive-redesign.html">
+          <div class="project-card">
+            <div class="project-image"></div>
+            <div class="project-details">
+              <h2>Responsive Redesign</h2>
+              <p>Redesigning a webpage to be more responsive.</p>
+            </div>
           </div>
-        </div>
-      </a>
+        </a>
       </section>
     </div>
       <footer>
@@ -344,32 +326,5 @@
         </div>
       </footer>
     </div>
-    <script>
-      // Add parallax effect to clouds
-      window.addEventListener("scroll", function () {
-        const scrollPosition = window.scrollY;
-
-        // Apply different speeds for different clouds to create parallax effect
-        document.querySelector(".cloud-1").style.transform = `translateX(${
-          scrollPosition * -0.05
-        }px)`;
-        document.querySelector(".cloud-2").style.transform = `translateX(${
-          scrollPosition * 0.03
-        }px)`;
-        document.querySelector(".cloud-3").style.transform = `translateX(${
-          scrollPosition * -0.02
-        }px)`;
-        document.querySelector(".cloud-4").style.transform = `translateX(${
-          scrollPosition * 0.04
-        }px)`;
-      });
-
-      // Sun click effect - Toggle between day/night (you can expand on this later for dark mode)
-      document.querySelector(".sun").addEventListener("click", function () {
-        this.classList.toggle("active");
-        // You can expand this to trigger dark mode later
-        alert("Sun clicked! You can expand this to toggle dark mode.");
-      });
-    </script>
   </body>
 </html>

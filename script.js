@@ -32,39 +32,62 @@ window.addEventListener("scroll", setActiveNavItem);
 // Function to toggle dark and light modes
 document.addEventListener('DOMContentLoaded', function() {
 
-    const toggle = document.querySelector('.toggle-theme');
+    const toggle = document.querySelectorAll('.toggle-theme');
     const sunIcon = document.querySelector('.sun-icon');
-  
+    const bigSun = document.querySelector('.big-sun');
+
     // Check for saved user preference, if any
     if (localStorage.getItem('darkMode') === 'enabled') {
       document.body.classList.add('dark-mode');
-      sunIcon.src = '/assets/small-moon.svg';
-      sunIcon.alt = 'Moon';
+      if (sunIcon) {
+        sunIcon.src = '/assets/small-moon.svg';
+        sunIcon.alt = 'Moon';
+      }
+      if (bigSun) {
+        bigSun.src = '/assets/big-moon.svg';
+        bigSun.alt = 'Moon';
+      }
     }
     
     // Toggle dark mode when clicking the sun/moon
-    toggle.addEventListener('click', function(e) {
+    function toggleFunc(e) {
       e.preventDefault();
       
       // Toggle dark mode class
       document.body.classList.toggle('dark-mode');
+      console.log('Dark mode toggled:', document.body.classList.contains('dark-mode'));
       
       // Update icon and localStorage
       if (document.body.classList.contains('dark-mode')) {
-        sunIcon.src = '/assets/small-moon.svg';
-        sunIcon.alt = 'Moon';
+        if (sunIcon) {
+          sunIcon.src = '/assets/small-moon.svg';
+          sunIcon.alt = 'Moon';
+        }
+        if (bigSun) {
+          bigSun.src = '/assets/big-moon.svg';
+          bigSun.alt = 'Moon';
+        }
         localStorage.setItem('darkMode', 'enabled');
       } else {
-        sunIcon.src = '/assets/small-sun.svg';
-        sunIcon.alt = 'Sun';
+        if (sunIcon) {
+          sunIcon.src = '/assets/small-sun.svg';
+          sunIcon.alt = 'Sun';
+        }
+        if (bigSun) {
+          bigSun.src = '/assets/big-sun.svg';
+          bigSun.alt = 'Sun';
+        }
         localStorage.setItem('darkMode', 'disabled');
       }
+    }
+
+    toggle.forEach(toggle => {
+      toggle.addEventListener('click', toggleFunc);
     });
 });
 
 // Function to handle header visibility on scroll
 document.addEventListener('DOMContentLoaded', function() {
-    console.log("hello")
     const nav = document.querySelector('nav');
     let lastScrollPosition = 0;
     let ticking = false;
@@ -96,3 +119,20 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 });  
+
+window.addEventListener("scroll", function () {
+  const scrollPosition = window.scrollY;
+
+  document.querySelector(".cloud-1").style.transform = `translateX(${
+    scrollPosition * -0.05
+  }px)`;
+  document.querySelector(".cloud-2").style.transform = `translateX(${
+    scrollPosition * 0.075
+  }px)`;
+  document.querySelector(".cloud-3").style.transform = `translateX(${
+    scrollPosition * -0.1
+  }px)`;
+  document.querySelector(".cloud-4").style.transform = `translateX(${
+    scrollPosition * 0.025
+  }px)`;
+});

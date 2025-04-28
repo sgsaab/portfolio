@@ -37,7 +37,8 @@ The project is built with:
 ## Running To-do
 
 - Home page
+  - project images
+  - stars move up to transition to dark mode
 - About me page
-- Heros for partiful and responsive case studies
 - Logo for myself, maybe otter?
 - Image to go in the chrome section (logo)
