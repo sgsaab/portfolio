@@ -40,3 +40,9 @@ The project is built with:
   - project images
 - About me page
 - Responsiveness
+  - make sure project grid is 2 by 2 on massive screens
+- Accessible Popups
+  - examples grid images same size
+  - text in output grid funky
+- Make bullet points not yellow
+- Make partiful itineraries before and after a table
