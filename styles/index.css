@@ -60,13 +60,18 @@
 }
 
 body > div {
-  overflow: hidden;
+  /* overflow: hidden; */
   width: 100%;
 }
   
 .main-container {
-  margin-left: 6rem;
-  margin-right: 6rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  padding-top: 1rem;
+  margin-top: -1rem;
+  overflow: hidden;
+  padding-bottom: 3rem;
+  margin-bottom: -3rem;
 }
 
 body {

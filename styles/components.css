@@ -49,7 +49,10 @@ footer p {
   }
 
   /* Navbar styles */
-  
+  nav.navbar-hidden{
+    transform: translateY(-100%);
+  }
+
   nav {
     padding-bottom: .75rem;
     padding-top: 1rem;
@@ -133,12 +136,7 @@ footer p {
     width: 20px; 
     height: 20px;
     transition: transform 0.3s ease;
-  }
-
-  .navbar-hidden {
-    transform: translateY(-100%);
-  }
-  
+  }  
   
   /* Responsive adjustments */
   @media (max-width: 768px) {

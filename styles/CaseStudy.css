@@ -6,7 +6,6 @@
   
 /* Case Study Content Layout */
 .case-study-content {
-  position: relative;
   display: flex;
   gap: 4rem;
 }
@@ -631,16 +630,18 @@ td {
 }
 
 .case-study-nav {
+  position: sticky;
+  top: 2rem;
+  width: 240px;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: sticky;
-  top: 2rem;
-  width: 240px;
   padding: 1rem;
-  max-height: calc(100vh - 4rem);
-  overflow-y: auto;
-  margin: 0 auto; 
+  margin: 0;
 }
 
 .case-study-nav ul {

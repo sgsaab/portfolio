@@ -1,5 +1,6 @@
 // Function to highlight the current section we're in for the case study navigation
 function setActiveNavItem() {
+  console.log("hello from setActiveNavItem");
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".case-study-nav a");
 
@@ -31,6 +32,8 @@ window.addEventListener("scroll", setActiveNavItem);
 
 // Function to toggle dark and light modes
 document.addEventListener('DOMContentLoaded', function() {
+  console.log("hello from toggle dark mode");
+
 
     const toggle = document.querySelectorAll('.toggle-theme');
     const sunIcon = document.querySelector('.sun-icon');
@@ -92,51 +95,48 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Function to handle header visibility on scroll
 document.addEventListener('DOMContentLoaded', function() {
-    const nav = document.querySelector('nav');
-    let lastScrollPosition = 0;
-    let ticking = false;
+  const nav = document.querySelector('nav');
+  let lastScrollPosition = 0;
+  let ticking = false;
+
+  function handleScroll() {
+    const currentScrollPosition = window.pageYOffset;
   
-    function handleScroll() {
-      const currentScrollPosition = window.pageYOffset;
-      
-      // Determine scroll direction
-      if (currentScrollPosition > lastScrollPosition && currentScrollPosition > 50) {
-        // Scrolling down & not at the top
-        nav.classList.add('navbar-hidden');
-      } else {
-        // Scrolling up or at the top
-        nav.classList.remove('navbar-hidden');
-      }
-      
-      lastScrollPosition = currentScrollPosition;
-      ticking = false;
+    if (currentScrollPosition <= 0) {
+      // Always show navbar at top
+      nav.classList.remove('navbar-hidden');
+    } else if (currentScrollPosition > lastScrollPosition && currentScrollPosition > 50) {
+      // Scrolling down past 50px → hide
+      nav.classList.add('navbar-hidden');
+    } else {
+      // Scrolling up → show
+      nav.classList.remove('navbar-hidden');
     }
   
-    // Throttle scroll events for better performance
-    window.addEventListener('scroll', function() {
-      if (!ticking) {
-        window.requestAnimationFrame(function() {
-          handleScroll();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    });
+    lastScrollPosition = currentScrollPosition;
+    ticking = false;
+  }
+    
+  // Throttle scroll events for better performance
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        handleScroll();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
 });  
 
-window.addEventListener("scroll", function () {
-  const scrollPosition = window.scrollY;
-
-  document.querySelector(".cloud-1").style.transform = `translateX(${
-    scrollPosition * -0.05
-  }px)`;
-  document.querySelector(".cloud-2").style.transform = `translateX(${
-    scrollPosition * 0.075
-  }px)`;
-  document.querySelector(".cloud-3").style.transform = `translateX(${
-    scrollPosition * -0.1
-  }px)`;
-  document.querySelector(".cloud-4").style.transform = `translateX(${
-    scrollPosition * 0.025
-  }px)`;
+document.addEventListener("DOMContentLoaded", function () {
+  if (document.querySelector(".cloud")) {
+    window.addEventListener("scroll", function () {
+      const scrollPosition = window.scrollY;
+      document.querySelector(".cloud-1").style.transform = `translateX(${scrollPosition * -0.05}px)`;
+      document.querySelector(".cloud-2").style.transform = `translateX(${scrollPosition * 0.075}px)`;
+      document.querySelector(".cloud-3").style.transform = `translateX(${scrollPosition * -0.1}px)`;
+      document.querySelector(".cloud-4").style.transform = `translateX(${scrollPosition * 0.025}px)`;
+    });
+  }
 });
