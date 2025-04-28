@@ -38,7 +38,6 @@ The project is built with:
 
 - Home page
   - project images
-  - stars move up to transition to dark mode
 - About me page
 - Logo for myself, maybe otter?
 - Image to go in the chrome section (logo)
