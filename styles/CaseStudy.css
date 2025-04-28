@@ -640,7 +640,7 @@ td {
   padding: 1rem;
   max-height: calc(100vh - 4rem);
   overflow-y: auto;
-  margin: 0 auto; /* Center the nav */
+  margin: 0 auto; 
 }
 
 .case-study-nav ul {

@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const toggle = document.querySelectorAll('.toggle-theme');
     const sunIcon = document.querySelector('.sun-icon');
     const bigSun = document.querySelector('.big-sun');
+    const favicon = document.getElementById('favicon');
 
     // Check for saved user preference, if any
     if (localStorage.getItem('darkMode') === 'enabled') {
@@ -47,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
         bigSun.src = '/assets/big-moon.svg';
         bigSun.alt = 'Moon';
       }
+      favicon.href = '/assets/night-logo.svg';
     }
     
     // Toggle dark mode when clicking the sun/moon
@@ -67,6 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
           bigSun.src = '/assets/big-moon.svg';
           bigSun.alt = 'Moon';
         }
+        favicon.href = '/assets/night-logo.svg';
         localStorage.setItem('darkMode', 'enabled');
       } else {
         if (sunIcon) {
@@ -77,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
           bigSun.src = '/assets/big-sun.svg';
           bigSun.alt = 'Sun';
         }
+        favicon.href = '/assets/day-logo.svg';
         localStorage.setItem('darkMode', 'disabled');
       }
     }
