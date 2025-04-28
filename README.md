@@ -42,3 +42,4 @@ The project is built with:
 - About me page
 - Logo for myself, maybe otter?
 - Image to go in the chrome section (logo)
+- Responsiveness
