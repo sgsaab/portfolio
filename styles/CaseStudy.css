@@ -667,10 +667,11 @@ td {
   transition: all 0.2s ease;
 }
 
-.case-study-nav a:hover {
+.case-study-nav a:hover,
+.case-study-nav a:focus {
   color: var(--text-color);
   padding-left: 1rem;
-
+  outline: none;
 }
 
 .case-study-nav a.active {

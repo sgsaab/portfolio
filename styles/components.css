@@ -92,9 +92,11 @@ footer p {
     display: inline-block; 
   }
   
-  nav a:not(.toggle-theme):not(.name-link):hover{
+  nav a:not(.toggle-theme):not(.name-link):hover,
+  nav a:not(.toggle-theme):not(.name-link):focus {
     color: var(--med-text);
     transform: translateY(-3px);
+    outline: none;
   }
 
   nav a:not(.toggle-theme).active {
@@ -102,6 +104,7 @@ footer p {
   }
   
   nav a:not(.toggle-theme):not(.name-link):hover::after,
+  nav a:not(.toggle-theme):not(.name-link):focus::after,
   nav a:not(.toggle-theme).active::after {
     content: '';
     position: absolute;
@@ -118,8 +121,10 @@ footer p {
     justify-content: center;
   }
   
-  .toggle-theme:hover {
+  .toggle-theme:hover,
+  .toggle-theme:focus {
     transform: rotate(20deg);
+    outline: none;
   }
   
   .sun-icon {
