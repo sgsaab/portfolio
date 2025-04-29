@@ -52,4 +52,3 @@ The project is built with:
 - Make cursor a thing
 - Try glory font
 - Extensions are squishing website
-- Add a hover effect to the social links

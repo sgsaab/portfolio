@@ -6,9 +6,14 @@
     <title>Sana Saab</title>
     <link rel="stylesheet" href="/styles/components.css" />
     <link rel="stylesheet" href="/styles/index.css" />
-    <link id="favicon" rel="icon" type="image/svg+xml" href="assets/day-logo.svg">
+    <link
+      id="favicon"
+      rel="icon"
+      type="image/svg+xml"
+      href="assets/day-logo.svg"
+    />
     <script src="script.js"></script>
-    <style>    
+    <style>
       .dark-mode .click-me {
         filter: invert(1);
       }
@@ -31,7 +36,7 @@
       .hero-section h1 {
         font-size: 4rem;
         font-weight: normal;
-        margin-bottom: -.5rem;
+        margin-bottom: -0.5rem;
       }
 
       .hero-section p {
@@ -45,6 +50,10 @@
         margin-top: 1rem;
       }
 
+      .social-icons img:hover {
+        filter: opacity(0.7);
+      }
+
       .dark-mode .social-icons {
         filter: invert(1);
       }
@@ -55,11 +64,11 @@
         gap: 1rem;
       }
 
-      .social-icons img { 
+      .social-icons img {
         width: 30px;
         height: 30px;
       }
-      
+
       /* Projects Grid */
       .projects-grid {
         display: grid;
@@ -83,7 +92,11 @@
       .project-image {
         height: 300px;
         width: 100%;
-        background-color: var(--primary-color)
+        background-color: var(--primary-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
       }
 
       .project-details {
@@ -119,7 +132,7 @@
         position: absolute;
         transform: translateY(50px);
         transition: opacity 0.3s ease, transform 0.5s ease 0.3s;
-        pointer-events: none; 
+        pointer-events: none;
         animation: none;
       }
 
@@ -127,17 +140,21 @@
         display: block;
         opacity: 1;
         transform: translateY(0);
-         /* No opacity transformation bc it looks weird */
-        transition: 
-          transform 0.5s ease;
+        /* No opacity transformation bc it looks weird */
+        transition: transform 0.5s ease;
       }
 
       @keyframes flicker {
-        0% { opacity: 0.7; }
-        50% { opacity: 1; }
-        100% { opacity: 0.6; }
+        0% {
+          opacity: 0.7;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0.6;
+        }
       }
-
 
       .dark-mode .stars-1 {
         animation: flicker 3s infinite alternate;
@@ -153,8 +170,8 @@
 
       .stars-4 {
         top: 6.5rem;
-        z-index: -1; 
-        height: 90rem; 
+        z-index: -1;
+        height: 90rem;
       }
       .cloud-1 {
         top: 4rem;
@@ -199,14 +216,9 @@
         z-index: 2;
       }
 
-      .no-transition {
-        transition: none !important;
-      } 
-
       h1 {
         transition: none;
       }
-
     </style>
   </head>
   <body>
@@ -216,126 +228,161 @@
           <a href="/" class="name-link">
             <h1 class="name"><strong>Sana Saab</strong></h1>
           </a>
-            <ul>
-              <li><a href="/" class="active">Projects</a></li>
-              <li><a href="/about.html">About</a></li>
-              <li><a href="/docs/resume.pdf" target="_blank">Resume</a></li>
-
-              <li>
-                <a href="" aria-label="Sun" class="toggle-theme">
-                  <img
-                    src="../assets/small-sun.svg"
-                    alt="Sun"
-                    class="sun-icon"
-                  />
-                </a>
-              </li>
-            </ul>
-        </div>
-      </nav>
-
-      <div class="main-container">
-
-      <section class="hero-section">
-        <img src="../assets/cloud.svg" alt="Cloud" class="cloud cloud-1" />
-        <img src="../assets/cloud.svg" alt="Cloud" class="cloud cloud-2" />
-        <img src="../assets/stacked-clouds.svg" alt="Two clouds overlapping" class="cloud cloud-3" />
-        <img src="../assets/cloud.svg" alt="Cloud" class="cloud cloud-4" />
-
-        <img class="click-me" src="../assets/click-me.svg" alt="Click Me" />
-        <img src="../assets/big-sun.svg" alt="Sun" class="big-sun toggle-theme" />
-
-        <img src="../assets/bright-stars-1.svg" alt="Stars" class="stars stars-1" />
-        <img src="../assets/bright-stars-2.svg" alt="Stars" class="stars stars-2" />
-        <img src="../assets/bright-stars-3.svg" alt="Stars" class="stars stars-3" />
-        <img src="../assets/dim-stars.svg" alt="Stars" class="stars stars-4" />
-        <h1 class="no-transition" style="transition: none">Hi, I'm Sana!</h1>
-        <p>
-          A software engineer who builds with empathy and accessibility at the
-          core
-        </p>
-        <div class="social-icons">
           <ul>
+            <li><a href="/" class="active">Projects</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/docs/resume.pdf" target="_blank">Resume</a></li>
+
             <li>
-              <a
-                href="https://github.com/sgsaab"
-                aria-label="GitHub"
-                target="_blank"
-              >
-                <img src="../assets/github.svg" alt="GitHub"
-              /></a>
-            </li>
-            <li>
-              <a
-                href="mailto:sana_saab@brown.edu"
-                aria-label="Email"
-                target="_blank"
-              >
-                <img src="../assets/email.svg" alt="Email"
-              /></a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/sanagsaab"
-                aria-label="LinkedIn"
-                target="_blank"
-              >
-                <img src="../assets/linkedin.svg" alt="LinkedIn" />
+              <a href="" aria-label="Sun" class="toggle-theme">
+                <img src="../assets/small-sun.svg" alt="Sun" class="sun-icon" />
               </a>
             </li>
           </ul>
         </div>
-    </section>
-      <section id="projects" class="projects-grid">
+      </nav>
 
-        <a href="/projects/partiful-itineraries.html">
-          <div class="project-card">
-            <div class="project-image"></div>
-            <div class="project-details">
-              <h2>Partiful Itineraries</h2>
-              <p>Working with partiful to design itineraries.</p>
-              </p>
-            </div>
+      <div class="main-container">
+        <section class="hero-section">
+          <img src="../assets/cloud.svg" alt="Cloud" class="cloud cloud-1" />
+          <img src="../assets/cloud.svg" alt="Cloud" class="cloud cloud-2" />
+          <img
+            src="../assets/stacked-clouds.svg"
+            alt="Two clouds overlapping"
+            class="cloud cloud-3"
+          />
+          <img src="../assets/cloud.svg" alt="Cloud" class="cloud cloud-4" />
+
+          <img class="click-me" src="../assets/click-me.svg" alt="Click Me" />
+          <img
+            src="../assets/big-sun.svg"
+            alt="Sun"
+            class="big-sun toggle-theme"
+          />
+
+          <img
+            src="../assets/bright-stars-1.svg"
+            alt="Stars"
+            class="stars stars-1"
+          />
+          <img
+            src="../assets/bright-stars-2.svg"
+            alt="Stars"
+            class="stars stars-2"
+          />
+          <img
+            src="../assets/bright-stars-3.svg"
+            alt="Stars"
+            class="stars stars-3"
+          />
+          <img
+            src="../assets/dim-stars.svg"
+            alt="Stars"
+            class="stars stars-4"
+          />
+          <h1 class="no-transition" style="transition: none">Hi, I'm Sana!</h1>
+          <p>
+            A software engineer who builds with empathy and accessibility at the
+            core
+          </p>
+          <div class="social-icons">
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/sgsaab"
+                  aria-label="GitHub"
+                  target="_blank"
+                >
+                  <img src="../assets/github.svg" alt="GitHub"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="mailto:sana_saab@brown.edu"
+                  aria-label="Email"
+                  target="_blank"
+                >
+                  <img src="../assets/email.svg" alt="Email"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/sanagsaab"
+                  aria-label="LinkedIn"
+                  target="_blank"
+                >
+                  <img src="../assets/linkedin.svg" alt="LinkedIn" />
+                </a>
+              </li>
+            </ul>
           </div>
-        </a>
-
-        <a href="https://github.com/sgsaab/url-shortener">
-          <div class="project-card">
-            <div class="project-image" style="background-color: #E2FFDE; display: flex; justify-content: center; align-items: center; overflow: hidden;">
-              <img src="../assets/url-shortener-card.svg" alt="url being cut by scissors" style="max-width: 90%; max-height: 90%" />
-            </div>
+        </section>
+        <section id="projects" class="projects-grid">
+          <a href="/projects/partiful-itineraries.html">
+            <div class="project-card">
+              <div class="project-image" style="background-color: #f6e3ff">
+                <img
+                  src="../assets/partiful-itineraries-card.svg"
+                  alt="calendar icon and party icon"
+                  style="max-width: 90%; max-height: 80%"
+                />
+              </div>
               <div class="project-details">
-              <h2>URL Shortener</h2>
-              <p>Basic url shortener server with a database</p>
+                <h2>Partiful Itineraries</h2>
+                <p>Working with partiful to design itineraries.</p>
+              </div>
             </div>
-          </div>
-        </a>
+          </a>
 
-        <a href="/projects/accessible-popups.html">
-          <div class="project-card">
-            <div class="project-image" style="background-color: #FFE3E4; display: flex; justify-content: center; align-items: center; overflow: hidden;">
-              <img src="../assets/accessible-popups-card.svg" alt="popups stacked on top of eachother" style="max-width: 90%; max-height: 90%" />
+          <a href="https://github.com/sgsaab/url-shortener">
+            <div class="project-card">
+              <div class="project-image" style="background-color: #e2ffde">
+                <img
+                  src="../assets/url-shortener-card.svg"
+                  alt="url being cut by scissors"
+                  style="max-width: 90%; max-height: 90%"
+                />
+              </div>
+              <div class="project-details">
+                <h2>URL Shortener</h2>
+                <p>Basic url shortener server with a database</p>
+              </div>
             </div>
-            <div class="project-details">
-              <h2>Accessible Popups</h2>
-              <p>Investigating popups and improving their accessibility.</p>
-            </div>
-          </div>
-        </a>
+          </a>
 
-        <a href="/projects/responsive-redesign.html">
-          <div class="project-card">
-            <div class="project-image" style="background-color: #E4FEFF; display: flex; justify-content: center; align-items: center; overflow: hidden;">
-              <img src="../assets/responsive-redesign-card.svg" alt="iphone, laptop, and tablet icons" style="max-width: 90%; max-height: 90%" />
+          <a href="/projects/accessible-popups.html">
+            <div class="project-card">
+              <div class="project-image" style="background-color: #ffe3e4">
+                <img
+                  src="../assets/accessible-popups-card.svg"
+                  alt="popups stacked on top of eachother"
+                  style="max-width: 90%; max-height: 90%"
+                />
+              </div>
+              <div class="project-details">
+                <h2>Accessible Popups</h2>
+                <p>Investigating popups and improving their accessibility.</p>
+              </div>
             </div>
-            <div class="project-details">
-              <h2>Responsive Redesign</h2>
-              <p>Redesigning a webpage to be more responsive.</p>
+          </a>
+
+          <a href="/projects/responsive-redesign.html">
+            <div class="project-card">
+              <div class="project-image" style="background-color: #e4feff">
+                <img
+                  src="../assets/responsive-redesign-card.svg"
+                  alt="iphone, laptop, and tablet icons"
+                  style="max-width: 90%; max-height: 90%"
+                />
+              </div>
+              <div class="project-details">
+                <h2>Responsive Redesign</h2>
+                <p>Redesigning a webpage to be more responsive.</p>
+              </div>
             </div>
-          </div>
-        </a>
-      </section>
-    </div>
+          </a>
+        </section>
+      </div>
       <footer>
         <div class="footer-container">
           <p>Designed and coded in Spring 2025 by Sana Saab</p>
