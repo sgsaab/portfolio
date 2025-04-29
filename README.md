@@ -38,6 +38,7 @@ The project is built with:
 
 - Home page
   - project images
+  - project images dark mode
 - About me page
 - Responsiveness
   - make sure project grid is 2 by 2 on massive screens
@@ -46,3 +47,9 @@ The project is built with:
   - text in output grid funky
 - Make bullet points not yellow
 - Make partiful itineraries before and after a table
+- Change email icon to a mail
+- Make clouds cover projects, then part when scrolling down
+- Make cursor a thing
+- Try glory font
+- Extensions are squishing website
+- Add a hover effect to the social links

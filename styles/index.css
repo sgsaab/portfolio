@@ -46,10 +46,10 @@
   transition: all 0.4s ease;
 }
 
-/* .no-transition {
-  transition: none !important;
-} */
 
+.no-transition {
+  transition: none !important;
+}
 /* Selection color */
 ::selection {
   background-color: var(--primary-color);
