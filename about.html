@@ -6,9 +6,107 @@
     <title>About | Sana Saab</title>
     <link rel="stylesheet" href="/styles/components.css" />
     <link rel="stylesheet" href="/styles/index.css" />
-    <link id="favicon" rel="icon" type="image/svg+xml" href="assets/day-logo.svg">
+    <link
+      id="favicon"
+      rel="icon"
+      type="image/svg+xml"
+      href="assets/day-logo.svg"
+    />
     <script src="script.js"></script>
-</style>
+    <style>
+      .intro {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        margin-top: 5vh;
+      }
+
+      .intro-text {
+        flex: 1;
+      }
+
+      .intro-text h1 {
+        font-size: 42px;
+        margin-bottom: 10px;
+      }
+
+      .pronunciation {
+        color: var(--light-text);
+        margin-bottom: 20px;
+        font-style: italic;
+      }
+
+      .profile-image {
+        /* placehoder, todo */
+        width: 300px;
+        height: 300px;
+        background-color: #868686;
+        border-radius: 10px;
+      }
+
+      /* Interests section */
+      .interests {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        padding: 40px 0;
+      }
+
+      .interest-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .interest-icon {
+        /* placeholder, todo */
+        width: 80px;
+        height: 80px;
+        margin-bottom: 15px;
+      }
+
+      /* About section */
+      .about {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .about-image {
+        width: 300px;
+        height: 200px;
+        background-color: #ddd;
+        border-radius: 10px;
+      }
+
+      .about-text {
+        flex: 1;
+      }
+
+      @media (max-width: 768px) {
+        .intro,
+        .about {
+          flex-direction: column;
+        }
+
+        .interests {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .profile-image,
+        .about-image {
+          width: 100%;
+          max-width: 300px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .interests {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
   <body>
     <div>
@@ -34,12 +132,73 @@
         </div>
       </nav>
 
-
       <div class="main-container">
+        <section class="intro">
+          <div class="intro-text">
+            <h1>This page is a work in progress. Come back later!</h1>
+            <h1>Hi, I'm Sana!</h1>
 
-        <h2>This page is a work in progress. Circle back later!</h2>
-        <p>Womp womp womp womp womp womp. Womp womp womp womp womp womp womp womp womp womp womp womp womp womp womp womp womp womp womp womp womp womp womp womp womp
+            <p class="pronunciation">/seh · nuh/</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+              tincidunt diam et magna efficitur eleifend a eget metus. Morbi
+              tincidunt mattis tincidunt. Ut sagittis blandit malesuada.
+              Pellentesque orci nisi, rhoncus vitae nunc et, vestibulum
+              porttitor justo. Proin commodo mattis justo ut vulputate.
+            </p>
+          </div>
+          <div class="profile-image"></div>
+        </section>
+
+        <section class="interests">
+          <div class="interest-item">
+            <img
+              src="assets/plane.svg"
+              alt="Travel icon"
+              class="interest-icon"
+            />
+            <p>I've been to over 20 countries</p>
+          </div>
+          <div class="interest-item">
+            <img src="assets/cat.svg" alt="Cat icon" class="interest-icon" />
+            <p>I love cats (and dogs!)</p>
+          </div>
+          <div class="interest-item">
+            <img src="assets/yarn.svg" alt="Yarn icon" class="interest-icon" />
+            <p>I crochet stuffed animals</p>
+          </div>
+          <div class="interest-item">
+            <img
+              src="assets/gamepad.svg"
+              alt="Game controller icon"
+              class="interest-icon"
+            />
+            <p>Hollow Knight is my fav game</p>
+          </div>
+          <div class="interest-item">
+            <img
+              src="assets/music.svg"
+              alt="Music icon"
+              class="interest-icon"
+            />
+            <p>I love learning new types of dance</p>
+          </div>
+        </section>
+
+        <section class="about">
+          <div class="about-image"></div>
+          <div class="about-text">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+              tincidunt diam et magna efficitur eleifend a eget metus. Morbi
+              tincidunt mattis tincidunt. Ut sagittis blandit malesuada.
+              Pellentesque orci nisi, rhoncus vitae nunc et, vestibulum
+              porttitor justo. Proin commodo mattis justo ut vulputate.
+            </p>
+          </div>
+        </section>
       </div>
+
       <footer>
         <div class="footer-container">
           <p>Designed and coded in Spring 2025 by Sana Saab</p>
