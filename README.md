@@ -18,7 +18,8 @@ The project is built with:
 │ ├── accessible-popups/ # case study specific assets  
 │ ├── partiful-itineraries/  
 │ ├── cloud.svg # home page and navbar assets  
-│ └── moon.svg...  
+│ ├── moon.svg  
+│ └── ...
 ├── docs/  
 │ └── resume.pdf  
 ├── styles/  
