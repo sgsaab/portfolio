@@ -402,14 +402,29 @@ a {
 
 @media (max-width: 450px) {
   .cloud-4 {
+    min-width: 20px;
     bottom: 7vh;
   }
 
+  .cloud-1 {
+    min-width: 25px;
+  }
+
+  .cloud-3 {
+    min-width: 50px;
+  }
+
   .big-sun {
+    min-width: 40px;
     top: 8vh;
   }
   .social-icons img {
     width: 20px;
     height: 20px;
   }
+  .project-card {
+    margin: 0 auto;
+    width: 95%;
+  }
+
 }
