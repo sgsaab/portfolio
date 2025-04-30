@@ -282,6 +282,7 @@ a {
   left: 8vw;
   width: 10vw;
   max-width: 500px;
+  min-width: 75px;
 }
 
 .cloud-2 {
@@ -289,6 +290,7 @@ a {
   right: 1vw;
   width: 10vw;
   max-width: 500px;
+  min-width: 75px;
 }
 
 .cloud-3 {
@@ -297,12 +299,14 @@ a {
   left: -2vw;
   left: 1%;
   max-width: 1000px;
+  min-width: 175px;
 }
 .cloud-4 {
   width: 7.5vw;
   bottom: 12vh;
   right: 13vw;
   max-width: 300px;
+  min-width: 60px;
 }
 
 .big-sun {
@@ -315,6 +319,7 @@ a {
   cursor: pointer;
   width: 11.5vw;
   max-width: 200px;
+  min-width: 90px;
 }
 
 .click-me {
@@ -366,14 +371,17 @@ a {
     padding: 30px;
   }
 
+  .project-card {
+    margin: 0 auto;
+    width: 90%;
+  }
   .project-image {
-    height: auto;
-    aspect-ratio: 4 / 3;
-    max-height: none;
+    max-height: 30vh;
   }
 
   .hero-section {
     height: auto;
+    min-height: 50vh;
     padding-top: 4rem;
     padding-bottom: 2rem;
   }
@@ -389,11 +397,6 @@ a {
 
   .click-me, .cloud-2{
     display: none;
-  }
-
-  .big-sun {
-    width: 10vw;
-    right: 5vw;
   }
 }
 

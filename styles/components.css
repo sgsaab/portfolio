@@ -142,7 +142,18 @@ footer p {
     transition: transform 0.3s ease;
   }  
   
-  /* Responsive adjustments */
+  .hamburger {
+    display: none;
+    background: none;
+    font-size: 2rem;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    border: none;
+    color: var(--text-color);
+    align-self: center;
+    justify-self: center;
+  }
+  
   @media (max-width: 768px) {
     .header-container {
       flex-direction: column;
@@ -160,4 +171,67 @@ footer p {
     nav a {
       font-size: 1.125rem;
     }
+
+    nav a::after {
+      display: none; 
+    }
+
+    .hamburger {
+      display: block;
+      margin-left: auto;
+    }
+  
+    .nav-links {
+      max-height: 0;
+      overflow: hidden;
+      transition:
+        max-height 0.5s ease,
+        opacity 0.5s ease,
+        padding 0.3s ease;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0 6rem; /* zero top/bottom padding by default */
+      background-color: var(--bg);
+      width: 100%;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 5;
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    .nav-links.show {
+      max-height: 500px;
+      opacity: 1;
+      padding: 1rem 6rem; /* now includes top/bottom padding */
+      pointer-events: auto;
+    }
+          
+    nav.navbar-hidden{
+      transform: translateY(-500%);
+      transition: transform 1s ease;
+    }  
+
+    nav {
+      transition: transform 1s ease, background-color 0.3s ease;
+    }
+
+    nav ul li {
+      width: 100%;
+    }
+  
+    nav ul li a {
+      font-size: 1.25rem;
+      display: block;
+      width: 100%;
+    }
+  
+    .header-container {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+    }
+
   }
+

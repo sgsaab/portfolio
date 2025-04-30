@@ -38,7 +38,6 @@ The project is built with:
 
 - About me page
 - Responsiveness
-  - make sure project grid is 2 by 2 on massive screens
 - Project images dark mode
 - Case studies
   - Accessible Popups
@@ -49,4 +48,3 @@ The project is built with:
 - Make clouds cover projects, then part when scrolling down
 - Make cursor a thing
 - Try glory font
-- Extensions are squishing website

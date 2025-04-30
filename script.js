@@ -1,6 +1,5 @@
 // Function to highlight the current section we're in for the case study navigation
 function setActiveNavItem() {
-  console.log("hello from setActiveNavItem");
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".case-study-nav a");
 
@@ -32,9 +31,6 @@ window.addEventListener("scroll", setActiveNavItem);
 
 // Function to toggle dark and light modes
 document.addEventListener('DOMContentLoaded', function() {
-  console.log("hello from toggle dark mode");
-
-
     const toggle = document.querySelectorAll('.toggle-theme');
     const sunIcon = document.querySelector('.sun-icon');
     const bigSun = document.querySelector('.big-sun');
@@ -129,6 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });  
 
+// Cloud movement when scroll
 document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector(".cloud")) {
     window.addEventListener("scroll", function () {
@@ -139,4 +136,14 @@ document.addEventListener("DOMContentLoaded", function () {
       document.querySelector(".cloud-4").style.transform = `translateX(${scrollPosition * 0.025}px)`;
     });
   }
+});
+
+// Hamburger menu toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
 });
