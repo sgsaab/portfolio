@@ -719,3 +719,16 @@ td {
   flex: 1;
   padding: 1rem;
 }
+
+@media (max-width: 900px) {
+  .case-study-banner {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .case-study {
+    margin: 2rem;
+    margin-top: 0;
+  }
+}

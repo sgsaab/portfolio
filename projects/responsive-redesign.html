@@ -135,28 +135,24 @@
   <body>
     <div>
       <nav>
-        <div class="header-container">
+        <div class="header-container" style="padding-right: 4rem">
           <a href="/" class="name-link">
             <h1 class="name"><strong>Sana Saab</strong></h1>
           </a>
-          <nav>
-            <ul>
-              <li class="nav-list"><a href="/">Projects</a></li>
-              <li class="nav-list"><a href="/about.html">About</a></li>
-              <li class="nav-list">
-                <a href="/docs/resume.pdf" target="_blank">Resume</a>
-              </li>
-              <li class="nav-list">
-                <a href="" aria-label="Sun" class="toggle-theme">
-                  <img
-                    src="../assets/small-sun.svg"
-                    alt="Sun"
-                    class="sun-icon"
-                  />
-                </a>
-              </li>
-            </ul>
-          </nav>
+
+          <button class="hamburger" aria-label="Toggle navigation">☰</button>
+
+          <ul class="nav-links">
+            <li><a href="/" class="active">Projects</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/docs/resume.pdf" target="_blank">Resume</a></li>
+
+            <li>
+              <a href="" aria-label="Sun" class="toggle-theme">
+                <img src="../assets/small-sun.svg" alt="Sun" class="sun-icon" />
+              </a>
+            </li>
+          </ul>
         </div>
       </nav>
 
