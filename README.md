@@ -38,13 +38,13 @@ The project is built with:
 
 - About me page
 - Responsiveness
-- Project images dark mode
+  - add a max-width to the hero section on the home page
+- Project images dark mode (?)
 - Case studies
+  - Make bullet points not yellow
+  - Make partiful itineraries before and after a table
   - Accessible Popups
     - examples grid images same size
     - text in output grid funky
-  - Make bullet points not yellow
-  - Make partiful itineraries before and after a table
 - Make clouds cover projects, then part when scrolling down
 - Make cursor a thing
-- Try glory font
