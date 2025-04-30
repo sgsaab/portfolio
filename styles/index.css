@@ -118,10 +118,6 @@ a {
   filter: invert(1);
 }
 
-.sun-icon {
-  display: none;
-}
-
 .hero-section {
   margin-top: -2rem;
   position: relative;
