@@ -13,213 +13,6 @@
       href="assets/day-logo.svg"
     />
     <script src="script.js"></script>
-    <style>
-      .dark-mode .click-me {
-        filter: invert(1);
-      }
-
-      .sun-icon {
-        display: none;
-      }
-
-      .hero-section {
-        margin-top: -2rem;
-        position: relative;
-        text-align: center;
-        height: 80vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .hero-section h1 {
-        font-size: 4rem;
-        font-weight: normal;
-        margin-bottom: -0.5rem;
-      }
-
-      .hero-section p {
-        font-size: 1.75rem;
-        max-width: 60%;
-        margin: 0;
-      }
-
-      .social-icons {
-        user-select: none;
-        margin-top: 1rem;
-      }
-
-      .social-icons img:hover {
-        filter: opacity(0.7);
-      }
-
-      .dark-mode .social-icons {
-        filter: invert(1);
-      }
-
-      .social-icons ul {
-        display: flex;
-        list-style: none;
-        gap: 1rem;
-      }
-
-      .social-icons img {
-        width: 30px;
-        height: 30px;
-      }
-
-      /* Projects Grid */
-      .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-        gap: 5rem;
-      }
-
-      .project-card {
-        border-radius: var(--border-radius);
-        overflow: hidden;
-        box-shadow: var(--box-shadow);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        background-color: var(--bg);
-      }
-
-      .project-card:hover {
-        transform: translateY(-10px);
-        box-shadow: var(--box-shadow-hover);
-      }
-
-      .project-image {
-        height: 300px;
-        width: 100%;
-        background-color: var(--primary-color);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-      }
-
-      .project-details {
-        padding: 1.5rem;
-      }
-
-      .project-details h3 {
-        margin-bottom: 0.5rem;
-      }
-
-      .project-details p {
-        margin-bottom: 0;
-      }
-
-      /* Decorative elements */
-      .cloud {
-        user-select: none;
-        pointer-events: none;
-        position: absolute;
-        z-index: 1;
-        opacity: 0.8;
-      }
-
-      .dark-mode .cloud {
-        display: none;
-      }
-
-      .stars {
-        opacity: 0;
-        object-fit: cover;
-        user-select: none;
-        pointer-events: none;
-        position: absolute;
-        transform: translateY(50px);
-        transition: opacity 0.3s ease, transform 0.5s ease 0.3s;
-        pointer-events: none;
-        animation: none;
-      }
-
-      .dark-mode .stars {
-        display: block;
-        opacity: 1;
-        transform: translateY(0);
-        /* No opacity transformation bc it looks weird */
-        transition: transform 0.5s ease;
-      }
-
-      @keyframes flicker {
-        0% {
-          opacity: 0.7;
-        }
-        50% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0.6;
-        }
-      }
-
-      .dark-mode .stars-1 {
-        animation: flicker 3s infinite alternate;
-      }
-
-      .dark-mode .stars-2 {
-        animation: flicker 4s infinite alternate 1s;
-      }
-
-      .dark-mode .stars-3 {
-        animation: flicker 5s infinite alternate 2s;
-      }
-
-      .stars-4 {
-        top: 6.5rem;
-        z-index: -1;
-        height: 90rem;
-      }
-      .cloud-1 {
-        top: 4rem;
-        left: 6rem;
-        width: 7.5rem;
-      }
-
-      .cloud-2 {
-        bottom: 10rem;
-        right: 1rem;
-        width: 7.5rem;
-      }
-
-      .cloud-3 {
-        width: 20rem;
-        bottom: 2rem;
-        left: -1rem;
-      }
-
-      .cloud-4 {
-        width: 6rem;
-        bottom: 5rem;
-        right: 10rem;
-      }
-
-      .big-sun {
-        user-select: none;
-        position: absolute;
-        top: 2rem;
-        right: -2rem;
-        z-index: 3;
-        transition: transform 0.3s ease;
-        cursor: pointer;
-      }
-
-      .click-me {
-        user-select: none;
-        pointer-events: none;
-        position: absolute;
-        top: 2rem;
-        right: 7rem;
-        z-index: 2;
-      }
-
-      h1 {
-        transition: none;
-      }
-    </style>
   </head>
   <body>
     <div>
@@ -349,6 +142,19 @@
               </div>
             </div>
           </a>
+
+          <!-- <a href="https://sgsaab.github.io/personas-and-storyboarding/">
+            <div class="project-card">
+              <div
+                class="project-image"
+                style="background-color: #e2ffde"
+              ></div>
+              <div class="project-details">
+                <h2>Personas and Storyboarding</h2>
+                <p>Investigating a coffee machine</p>
+              </div>
+            </div>
+          </a> -->
 
           <a href="/projects/accessible-popups.html">
             <div class="project-card">

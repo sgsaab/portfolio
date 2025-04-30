@@ -46,7 +46,6 @@
   transition: all 0.4s ease;
 }
 
-
 .no-transition {
   transition: none !important;
 }
@@ -114,3 +113,217 @@ a {
   text-decoration: none;
 }
 
+/* Home page styles */
+.dark-mode .click-me {
+  filter: invert(1);
+}
+
+.sun-icon {
+  display: none;
+}
+
+.hero-section {
+  margin-top: -2rem;
+  position: relative;
+  text-align: center;
+  height: 80vh;
+  max-height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.hero-section h1 {
+  font-size: clamp(3rem, 9vh, 5rem);
+  font-weight: normal;
+  margin-bottom: -0.5rem;
+}
+
+.hero-section p {
+  font-size: clamp(1.125rem, 5vh, 2rem);;
+  max-width: 60%;
+  margin: 0;
+}
+
+.social-icons {
+  user-select: none;
+  margin-top: 1rem;
+}
+
+.social-icons img:hover {
+  filter: opacity(0.7);
+}
+
+.dark-mode .social-icons {
+  filter: invert(1);
+}
+
+.social-icons ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5vw;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.project-card {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--bg);
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.project-image {
+  height: 50vh;
+  max-height: 300px;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.project-details {
+  padding: 1.5rem;
+}
+
+.project-details h3 {
+  margin-bottom: 0.5rem;
+}
+
+.project-details p {
+  margin-bottom: 0;
+}
+
+/* Decor */
+.cloud {
+  user-select: none;
+  position: absolute;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.dark-mode .cloud {
+  display: none;
+}
+
+.stars {
+  opacity: 0;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  transform: translateY(50px);
+  transition: opacity 0.3s ease, transform 0.5s ease 0.3s;
+  pointer-events: none;
+  animation: none;
+}
+
+.dark-mode .stars {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  /* No opacity transformation bc it looks weird */
+  transition: transform 0.5s ease;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.dark-mode .stars-1 {
+  animation: flicker 3s infinite alternate;
+}
+
+.dark-mode .stars-2 {
+  animation: flicker 4s infinite alternate 1s;
+}
+
+.dark-mode .stars-3 {
+  animation: flicker 5s infinite alternate 2s;
+}
+
+.stars-4 {
+  top: 20vh;
+  z-index: -1;
+  height: 90rem;
+}
+
+.cloud-1 {
+  top: 10vh;
+  left: 8vw;
+  width: 10vw;
+  max-width: 500px;
+}
+
+.cloud-2 {
+  bottom: 24vh;
+  right: 1vw;
+  width: 10vw;
+  max-width: 500px;
+}
+
+.cloud-3 {
+  width: 25vw; 
+  bottom: 5vh;
+  left: -2vw;
+  left: 1%;
+  max-width: 1000px;
+}
+.cloud-4 {
+  width: 7.5vw;
+  bottom: 12vh;
+  right: 13vw;
+  max-width: 300px;
+}
+
+.big-sun {
+  user-select: none;
+  position: absolute;
+  top: 5vh;
+  right: 0vw;
+  z-index: 3;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  width: 11.5vw;
+  max-width: 200px;
+}
+
+.click-me {
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  top: 5vh;
+  right: 11vw;
+  z-index: 2;
+  width: 9vw;
+  max-width: 165px;
+}
