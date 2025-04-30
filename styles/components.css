@@ -211,11 +211,11 @@ footer p {
           
     nav.navbar-hidden{
       transform: translateY(-500%);
-      transition: transform 1s ease;
+      transition: transform .5s ease;
     }  
 
     nav {
-      transition: transform 1s ease, background-color 0.3s ease;
+      transition: transform .3s ease, background-color 0.3s ease;
     }
 
     nav ul li {
