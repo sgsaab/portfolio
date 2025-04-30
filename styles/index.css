@@ -327,3 +327,86 @@ a {
   width: 9vw;
   max-width: 165px;
 }
+
+/* Responsive adjustments for tablets and smaller */
+@media (max-width: 1024px) {
+  .main-container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .hero-section h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  .hero-section p {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    max-width: 80%;
+  }
+
+  .projects-grid {
+    gap: 4vw;
+  }
+
+  .project-image {
+    max-height: 250px;
+  }
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .main-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr; /* Stack cards in 1 column */
+    gap: 5vh;
+    padding: 30px;
+  }
+
+  .project-image {
+    height: auto;
+    aspect-ratio: 4 / 3;
+    max-height: none;
+  }
+
+  .hero-section {
+    height: auto;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+  }
+
+  .hero-section h1 {
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+  }
+
+  .hero-section p {
+    font-size: clamp(1rem, 5vw, 1.25rem);
+    max-width: 80%;
+  }
+
+  .click-me, .cloud-2{
+    display: none;
+  }
+
+  .big-sun {
+    width: 10vw;
+    right: 5vw;
+  }
+}
+
+@media (max-width: 450px) {
+  .cloud-4 {
+    bottom: 7vh;
+  }
+
+  .big-sun {
+    top: 8vh;
+  }
+  .social-icons img {
+    width: 20px;
+    height: 20px;
+  }
+}
