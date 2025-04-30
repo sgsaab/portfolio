@@ -46,10 +46,13 @@
 
       /* Interests section */
       .interests {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
-        padding: 40px 0;
+        margin: 2rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 2rem;
       }
 
       .interest-item {
@@ -57,13 +60,19 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+        justify-content: space-around;
+        width: 150px;
+        min-height: 200px;
+      }
+
+      .interests p {
+        margin-bottom: 0px;
+        font-size: 1.4rem;
       }
 
       .interest-icon {
-        /* placeholder, todo */
-        width: 80px;
-        height: 80px;
-        margin-bottom: 15px;
+        width: 100px;
+        height: 100px;
       }
 
       /* About section */
@@ -111,7 +120,7 @@
   <body>
     <div>
       <nav>
-        <div class="header-container" style="padding-right: 4rem">
+        <div class="header-container">
           <a href="/" class="name-link">
             <h1 class="name"><strong>Sana Saab</strong></h1>
           </a>
@@ -153,31 +162,39 @@
         <section class="interests">
           <div class="interest-item">
             <img
-              src="assets/plane.svg"
+              src="assets/travel-icon.svg"
               alt="Travel icon"
               class="interest-icon"
             />
             <p>I've been to over 20 countries</p>
           </div>
           <div class="interest-item">
-            <img src="assets/cat.svg" alt="Cat icon" class="interest-icon" />
             <p>I love cats (and dogs!)</p>
+            <img
+              src="assets/cat-icon.svg"
+              alt="Cat icon"
+              class="interest-icon"
+            />
           </div>
           <div class="interest-item">
-            <img src="assets/yarn.svg" alt="Yarn icon" class="interest-icon" />
+            <img
+              src="assets/crochet-icon.svg"
+              alt="Yarn icon"
+              class="interest-icon"
+            />
             <p>I crochet stuffed animals</p>
           </div>
           <div class="interest-item">
+            <p>Hollow Knight is my fav game</p>
             <img
-              src="assets/gamepad.svg"
+              src="assets/gaming-icon.svg"
               alt="Game controller icon"
               class="interest-icon"
             />
-            <p>Hollow Knight is my fav game</p>
           </div>
           <div class="interest-item">
             <img
-              src="assets/music.svg"
+              src="assets/dancing-icon.svg"
               alt="Music icon"
               class="interest-icon"
             />
