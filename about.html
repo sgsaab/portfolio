@@ -14,11 +14,19 @@
     />
     <script src="script.js"></script>
     <style>
+      p {
+        margin-bottom: 0;
+        font-size: 1.4rem;
+      }
+
+      li {
+        font-size: 1.4rem;
+      }
+
       .intro {
         display: flex;
-        align-items: center;
-        gap: 40px;
-        margin-top: 5vh;
+        align-items: flex-start;
+        gap: 3rem;
       }
 
       .intro-text {
@@ -26,8 +34,8 @@
       }
 
       .intro-text h1 {
-        font-size: 42px;
-        margin-bottom: 10px;
+        font-size: clamp(3rem, 4vh, 5rem);
+        margin-bottom: 0.125rem;
       }
 
       .pronunciation {
@@ -36,16 +44,17 @@
         font-style: italic;
       }
 
-      .profile-image {
-        /* placehoder, todo */
-        width: 300px;
-        height: 300px;
-        background-color: #868686;
+      .about-image {
+        max-width: 50vh;
         border-radius: 10px;
       }
 
+      .dark-mode mark {
+        color: white;
+      }
+
       /* Interests section */
-      .interests {
+      .fun-facts {
         margin: 2rem 0;
         display: flex;
         flex-wrap: wrap;
@@ -55,7 +64,7 @@
         gap: 2rem;
       }
 
-      .interest-item {
+      .fact {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -65,12 +74,11 @@
         min-height: 200px;
       }
 
-      .interests p {
+      .fun-facts p {
         margin-bottom: 0px;
-        font-size: 1.4rem;
       }
 
-      .interest-icon {
+      .fact-icon {
         width: 100px;
         height: 100px;
       }
@@ -82,31 +90,50 @@
         gap: 40px;
       }
 
-      .about-image {
-        width: 300px;
-        height: 200px;
-        background-color: #ddd;
-        border-radius: 10px;
-      }
-
       .about-text {
         flex: 1;
+      }
+
+      .tech-stack {
+        display: flex;
+        flex-direction: column;
+        margin: 2rem 0;
+        margin-top: 4rem;
+      }
+
+      .tech-stack img {
+        max-height: 70vh;
+        max-width: 90%;
+        align-self: center;
+      }
+
+      .about-points {
+        list-style: disc;
+        padding-left: 1.5rem;
+        line-height: 1.6;
+      }
+      .about-points li {
+        margin-bottom: 1rem;
       }
 
       @media (max-width: 768px) {
         .intro,
         .about {
           flex-direction: column;
+          align-items: center;
         }
 
-        .interests {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .profile-image,
         .about-image {
           width: 100%;
           max-width: 300px;
+        }
+
+        .fact-icon {
+          width: 80px;
+        }
+
+        .fun-facts p {
+          font-size: 1.25rem;
         }
       }
 
@@ -144,75 +171,114 @@
       <div class="main-container">
         <section class="intro">
           <div class="intro-text">
-            <h1>This page is a work in progress. Come back later!</h1>
-            <!-- <h1>Hi, I'm Sana!</h1> -->
+            <h1>Hi, I'm Sana!</h1>
 
             <p class="pronunciation">/seh · nuh/</p>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-              tincidunt diam et magna efficitur eleifend a eget metus. Morbi
-              tincidunt mattis tincidunt. Ut sagittis blandit malesuada.
-              Pellentesque orci nisi, rhoncus vitae nunc et, vestibulum
-              porttitor justo. Proin commodo mattis justo ut vulputate.
+              Hello! I'm a sophomore at
+              <mark style="background-color: var(--accent-color2)"
+                >Brown University</mark
+              >
+              studying
+              <mark style="background-color: var(--accent-color4)"
+                >Computer Science</mark
+              >
+              , and am passionate about responsibly using technology to advance
+              society while protecting others. I'm a fan of
+
+              <mark style="background-color: var(--accent-color)"
+                >cats, fun facts, and bucket hats</mark
+              >
+              , and when I'm not working I enjoy learning types of dance (albeit
+              badly) and going on adventures. This summer I'll be interning at
+              <mark style="background-color: var(--primary-color)">Amazon</mark>
+              as a Software Development Engineer in Boston.
             </p>
           </div>
-          <div class="profile-image"></div>
+          <div>
+            <img
+              src="assets/bunny.JPEG"
+              alt="Profile image of Sana holding a bunny"
+              class="about-image"
+            />
+          </div>
         </section>
 
-        <section class="interests">
-          <div class="interest-item">
+        <section class="fun-facts">
+          <div class="fact">
             <img
               src="assets/travel-icon.svg"
               alt="Travel icon"
-              class="interest-icon"
+              class="fact-icon"
             />
             <p>I've been to over 20 countries</p>
           </div>
-          <div class="interest-item">
+          <div class="fact">
             <p>I love cats (and dogs!)</p>
-            <img
-              src="assets/cat-icon.svg"
-              alt="Cat icon"
-              class="interest-icon"
-            />
+            <img src="assets/cat-icon.svg" alt="Cat icon" class="fact-icon" />
           </div>
-          <div class="interest-item">
+          <div class="fact">
             <img
               src="assets/crochet-icon.svg"
               alt="Yarn icon"
-              class="interest-icon"
+              class="fact-icon"
             />
             <p>I crochet stuffed animals</p>
           </div>
-          <div class="interest-item">
+          <div class="fact">
             <p>Hollow Knight is my fav game</p>
             <img
               src="assets/gaming-icon.svg"
               alt="Game controller icon"
-              class="interest-icon"
+              class="fact-icon"
             />
           </div>
-          <div class="interest-item">
+          <div class="fact">
             <img
               src="assets/dancing-icon.svg"
               alt="Music icon"
-              class="interest-icon"
+              class="fact-icon"
             />
             <p>I love learning new types of dance</p>
           </div>
         </section>
 
         <section class="about">
-          <div class="about-image"></div>
-          <div class="about-text">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-              tincidunt diam et magna efficitur eleifend a eget metus. Morbi
-              tincidunt mattis tincidunt. Ut sagittis blandit malesuada.
-              Pellentesque orci nisi, rhoncus vitae nunc et, vestibulum
-              porttitor justo. Proin commodo mattis justo ut vulputate.
-            </p>
+          <div>
+            <img
+              src="assets/goat.JPEG"
+              alt="Image of Sana with goats"
+              class="about-image"
+            />
           </div>
+          <div class="about-text">
+            <ul class="about-points">
+              <li>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque
+                faucibus ex sapien vitae pellentesque sem placerat.
+              </li>
+              <li>In id cursus mi pretium tellus duis convallis.</li>
+              <li>Tempus leo eu aenean sed diam urna tempor.</li>
+              <li>
+                Pulvinar vivamus fringilla lacus nec metus bibendum egestas.
+              </li>
+              <li>
+                Iaculis massa nisl malesuada lacinia integer nunc posuere.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="tech-stack">
+          <img
+            src="assets/tech-stack.svg"
+            alt="A mind map diagram titled 'Tech Stack' in the center, 
+            with four main branches: Frontend, Backend, Databases, and Tools. 
+            The Frontend branch includes TypeScript, JavaScript, HTML/CSS, Tailwind CSS, 
+            and React.js. The Backend branch includes Node.js, Python, C/C++, Java, and
+             Next.js. The Databases branch includes Firebase Firestore and Azure. 
+             The Tools branch includes Docker, Figma, WSL, and Git/GitHub."
+          />
         </section>
       </div>
 
@@ -253,32 +319,5 @@
         </div>
       </footer>
     </div>
-    <script>
-      // Add parallax effect to clouds
-      window.addEventListener("scroll", function () {
-        const scrollPosition = window.scrollY;
-
-        // Apply different speeds for different clouds to create parallax effect
-        document.querySelector(".cloud-1").style.transform = `translateX(${
-          scrollPosition * -0.05
-        }px)`;
-        document.querySelector(".cloud-2").style.transform = `translateX(${
-          scrollPosition * 0.03
-        }px)`;
-        document.querySelector(".cloud-3").style.transform = `translateX(${
-          scrollPosition * -0.02
-        }px)`;
-        document.querySelector(".cloud-4").style.transform = `translateX(${
-          scrollPosition * 0.04
-        }px)`;
-      });
-
-      // Sun click effect - Toggle between day/night (you can expand on this later for dark mode)
-      document.querySelector(".sun").addEventListener("click", function () {
-        this.classList.toggle("active");
-        // You can expand this to trigger dark mode later
-        alert("Sun clicked! You can expand this to toggle dark mode.");
-      });
-    </script>
   </body>
 </html>
