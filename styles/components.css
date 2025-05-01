@@ -253,6 +253,9 @@ footer p {
       padding: 0 2rem;
     }
 
+    .nav-links.show {
+      padding-bottom: 1rem;
+    }
   }
 
   @media (max-width: 400px) {
@@ -261,6 +264,9 @@ footer p {
     }
     .nav-links {
       padding: 0 1rem;
+    }
+    .nav-links.show {
+      padding-bottom: 1rem;
     }
   }
 

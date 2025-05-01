@@ -58,11 +58,15 @@
   background-color: var(--primary-color);
 }
 
+
+.dark-mode mark {
+  color: white;
+}
 body > div {
   /* overflow: hidden; */
   width: 100%;
 }
-  
+
 .main-container {
   padding-left: 6rem;
   padding-right: 6rem;
@@ -328,6 +332,141 @@ a {
   max-width: 165px;
 }
 
+/* About page */
+
+.about-page p {
+  margin-bottom: 0;
+  font-size: 1.4rem;
+}
+
+.about-page li {
+  font-size: 1.4rem;
+} 
+
+.intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.intro-text {
+  flex: 1;
+}
+
+.intro-text h1 {
+  font-size: clamp(3rem, 4vh, 5rem);
+  margin-bottom: 0.125rem;
+}
+
+.pronunciation {
+  color: var(--light-text);
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.about-image {
+  max-width: 50vh;
+  border-radius: 10px;
+}
+
+/* Interests section */
+.fun-facts {
+  margin: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  width: 150px;
+  min-height: 200px;
+}
+
+.fun-facts p {
+  margin-bottom: 0px;
+}
+
+.fact-icon {
+  width: 100px;
+  height: 100px;
+}
+
+
+/* About section */
+.about {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.tech-stack {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+  margin-top: 4rem;
+}
+
+.tech-stack img {
+  max-height: 70vh;
+  max-width: 90%;
+  align-self: center;
+}
+
+.about-points {
+  list-style: disc;
+  padding-left: 1.5rem;
+  line-height: 1.6;
+}
+.about-points li {
+  margin-bottom: 1rem;
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.tech-stack {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+  margin-top: 4rem;
+}
+
+.tech-stack img {
+  max-height: 70vh;
+  max-width: 90%;
+  align-self: center;
+}
+
+.about-points {
+  list-style: disc;
+  padding-left: 1.5rem;
+  line-height: 1.6;
+}
+.about-points li {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+
 /* Responsive adjustments for tablets and smaller */
 @media (max-width: 1024px) {
   .main-container {
@@ -355,6 +494,26 @@ a {
 
 /* Responsive adjustments for mobile */
 @media (max-width: 768px) {
+
+  .intro,
+  .about {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-image {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .fact-icon {
+    width: 80px;
+  }
+
+  .fun-facts p {
+    font-size: 1.25rem;
+  }
+
   .main-container {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
