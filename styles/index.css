@@ -335,7 +335,7 @@ a {
 
 /* About page */
 
-.about-page p {
+.about-page p:not(.pronunciation) {
   margin-bottom: 0;
   font-size: 1.4rem;
 }
@@ -356,12 +356,12 @@ a {
 
 .intro-text h1 {
   font-size: clamp(2rem, 5vw, 2.5rem);
-  margin-bottom: 0.125rem;
+  margin-bottom: 0;
 }
 
-.pronunciation {
+.pronunciation{
   color: var(--light-text);
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
   font-style: italic;
 }
 
