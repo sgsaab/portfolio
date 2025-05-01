@@ -147,3 +147,16 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.classList.toggle('show');
   });
 });
+
+// Cursor trail
+// document.addEventListener('mousemove', (e) => {
+//   const trail = document.createElement('div');
+//   trail.className = 'cursor-trail';
+//   trail.style.left = `${e.clientX}px`;
+//   trail.style.top = `${e.clientY}px`;
+//   document.body.appendChild(trail);
+
+//   setTimeout(() => {
+//     trail.remove();
+//   }, 800); // Make sure this matches the animation duration in CSS
+// });

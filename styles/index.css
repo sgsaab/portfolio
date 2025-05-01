@@ -89,6 +89,14 @@ body {
   justify-content: center;
 }
 
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+
 a, button,
 [role="button"],
 input[type="submit"],

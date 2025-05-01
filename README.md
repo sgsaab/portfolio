@@ -26,6 +26,7 @@ The project is built with:
 │ ├── CaseStudy.css # case study sites' styles  
 │ ├── Components.css # navbar, footer styles  
 │ └── index.css # whole page styles  
+├── CNAME # domain configuration  
 ├── about.html # my about page  
 ├── index.html # home page  
 ├── scripts.js # scripts for interactivity  
