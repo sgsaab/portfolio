@@ -37,12 +37,8 @@ The project is built with:
 
 ## Running To-do
 
-- About me page
-- Responsiveness
-  - add a max-width to the hero section on the home page
 - Project images dark mode (?)
 - Case studies
-  - Make bullet points not yellow
   - Make partiful itineraries before and after a table
   - Accessible Popups
     - examples grid images same size

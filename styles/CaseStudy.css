@@ -86,17 +86,9 @@ ul, ol {
 }
 
 li:not(.nav-list) {
-  list-style: none;
+  /* list-style: none; */
   margin-bottom: 1rem;
   position: relative;
-}
-
-.case-study-content ul li::before
- {
-  content: "•";
-  position: absolute;
-  left: -1.5rem;
-  color: var(--accent-color);
 }
 
 /* Content sections */
