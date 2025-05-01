@@ -78,6 +78,7 @@ body > div {
 }
 
 body {
+  cursor: url('/assets/paper-airplane.png'), auto;
   transition: background-color 0.3s ease, color 0.3s ease;
   background: var(--bg);
   color: var(--text-color);
@@ -86,6 +87,13 @@ body {
   padding-bottom: 3rem;
   display: flex;
   justify-content: center;
+}
+
+a, button,
+[role="button"],
+input[type="submit"],
+input[type="button"] {
+  cursor: url('/assets/pointer.png'), auto;
 }
 
 html {
@@ -316,7 +324,7 @@ a {
   right: 0vw;
   z-index: 3;
   transition: transform 0.3s ease;
-  cursor: pointer;
+  cursor:  url('/assets/pointer.png'), auto;
   width: 11.5vw;
   max-width: 200px;
   min-width: 90px;

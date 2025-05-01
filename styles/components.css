@@ -147,7 +147,7 @@ footer p {
     background: none;
     font-size: 2rem;
     padding: 0.25rem 0.5rem;
-    cursor: pointer;
+    cursor: url('/assets/pointer.png'), auto;
     border: none;
     color: var(--text-color);
     align-self: center;
