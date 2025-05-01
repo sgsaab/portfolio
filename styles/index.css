@@ -355,7 +355,7 @@ a {
 }
 
 .intro-text h1 {
-  font-size: clamp(3rem, 4vh, 5rem);
+  font-size: clamp(2rem, 5vw, 2.5rem);
   margin-bottom: 0.125rem;
 }
 
@@ -507,6 +507,20 @@ a {
     max-width: 300px;
   }
 
+  .about-page p {
+    margin-bottom: 0;
+    font-size: 1.25rem;
+  }
+  
+  .about-page li {
+    font-size: 1.25rem;
+  } 
+
+  .fun-facts {
+    gap: 0.5rem;
+  }
+  
+
   .fact-icon {
     width: 80px;
   }
@@ -556,6 +570,19 @@ a {
 }
 
 @media (max-width: 450px) {
+  .about-page p {
+    margin-bottom: 0;
+    font-size: 1rem;
+  }
+  
+  .about-page li {
+    font-size: 1rem;
+  } 
+
+  .fun-facts {
+    gap: 0.5rem;
+  }
+  
   .cloud-4 {
     min-width: 20px;
     bottom: 7vh;
