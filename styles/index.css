@@ -51,11 +51,11 @@
 }
 /* Selection color */
 ::selection {
-  background-color: var(--primary-color);
+  background-color: var(--accent-color2);
 }
 
 ::-moz-selection {
-  background-color: var(--primary-color);
+  background-color: var(--accent-color2);
 }
 
 
@@ -476,7 +476,7 @@ a {
   }
 
   .hero-section h1 {
-    font-size: clamp(2rem, 6vw, 3rem);
+    font-size: clamp(3rem, 6vw, 3rem);
   }
 
   .hero-section p {
@@ -535,17 +535,20 @@ a {
   }
 
   .projects-grid {
-    grid-template-columns: 1fr; /* Stack cards in 1 column */
     gap: 5vh;
     padding: 30px;
   }
 
-  .project-card {
-    margin: 0 auto;
-    width: 90%;
-  }
   .project-image {
     max-height: 30vh;
+  }
+
+  .project-card h2 {
+    font-size: clamp(1.25rem, 4vw, 2.5rem);
+  }
+
+  .project-card p {
+    font-size: clamp(1rem, 3vw, 2.5rem);
   }
 
   .hero-section {
@@ -556,7 +559,7 @@ a {
   }
 
   .hero-section h1 {
-    font-size: clamp(1.75rem, 7vw, 2.5rem);
+    font-size: clamp(2.5rem, 7vw, 2.5rem);
   }
 
   .hero-section p {
@@ -569,7 +572,14 @@ a {
   }
 }
 
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr; 
+  }
+}
+
 @media (max-width: 450px) {
+
   .about-page p {
     margin-bottom: 0;
     font-size: 1rem;
