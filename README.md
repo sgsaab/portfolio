@@ -42,3 +42,4 @@ The project is built with:
 - Project images dark mode (?)
 - Make cursor a thing
 - Make clouds cover projects, then part when scrolling down
+- Add tags to projects (e.g: case study, design, swe)
