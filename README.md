@@ -37,11 +37,15 @@ The project is built with:
 
 ## Running To-do
 
+#### Optional
+
 - Project images dark mode (?)
+- Make cursor a thing
+- Make clouds cover projects, then part when scrolling down
+
+#### Not
+
 - Case studies
   - Make partiful itineraries before and after a table
   - Accessible Popups
     - examples grid images same size
-    - text in output grid funky
-- Make clouds cover projects, then part when scrolling down
-- Make cursor a thing
