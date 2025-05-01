@@ -527,6 +527,12 @@ a {
     margin-bottom: 0;
     font-size: 1.25rem;
   }
+
+  
+  .about-page p:not(.pronunciation) {
+    font-size: 1.25rem;
+  }
+
   
   .about-page li {
     font-size: 1.25rem;
@@ -600,6 +606,11 @@ a {
     margin-bottom: 0;
     font-size: 1rem;
   }
+
+  .about-page p:not(.pronunciation) {
+    font-size: 1rem;
+  }
+
   
   .about-page li {
     font-size: 1rem;
