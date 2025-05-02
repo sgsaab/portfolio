@@ -38,9 +38,10 @@ The project is built with:
 
 ## Running To-do
 
+- Visibility. "I bought the domain sanasaab.com and it's now working! But even when I google text that's word for word in the website, the site doesn't come up. When I google my name it doesn't come up either. Why?"
+
 #### Optional
 
 - Project images dark mode (?)
-- Make cursor a thing
 - Make clouds cover projects, then part when scrolling down
 - Add tags to projects (e.g: case study, design, swe)

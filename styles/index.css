@@ -62,10 +62,6 @@
 .dark-mode mark {
   color: white;
 }
-body > div {
-  /* overflow: hidden; */
-  width: 100%;
-}
 
 .main-container {
   padding-left: 6rem;
