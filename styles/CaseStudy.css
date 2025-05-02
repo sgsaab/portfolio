@@ -32,11 +32,6 @@
 }
 
 /* Typography */
-.link{
-  color: rgb(17, 77, 196);
-  text-decoration: underline;
-}
-
 .dark-mode .link{
   color: rgb(108, 183, 208);
   text-decoration: underline;
