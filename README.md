@@ -1,10 +1,10 @@
 # My Porfolio
 
-My porfolio! A final project for the course CS1300 at brown.
+My porfolio!
 
 ## Project Overview
 
-TODO
+This was originally made as a final project for the course CS1300 at Brown. The porfolio was meant to showcase our work from the class and convey a coherent personal brand.
 
 The project is built with:
 
@@ -39,6 +39,7 @@ The project is built with:
 ## Running To-do
 
 - Visibility. "I bought the domain sanasaab.com and it's now working! But even when I google text that's word for word in the website, the site doesn't come up. When I google my name it doesn't come up either. Why?"
+- **After grading**: replaces personas and storyboarding with url shortener. Add more technical projects.
 
 #### Optional
 
