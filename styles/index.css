@@ -429,12 +429,13 @@ a {
   flex-direction: column;
   margin: 2rem 0;
   margin-top: 4rem;
+  align-items: center;
+  gap: 2rem;
 }
 
 .tech-stack img {
   max-height: 70vh;
   max-width: 90%;
-  align-self: center;
 }
 
 .about-points {
